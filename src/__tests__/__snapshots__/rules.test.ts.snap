@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rules should export configs that refer to actual rules 1`] = `
+Object {
+  "all": Object {
+    "plugins": Array [
+      "jest-extended",
+    ],
+    "rules": Object {},
+  },
+  "recommended": Object {
+    "plugins": Array [
+      "jest-extended",
+    ],
+    "rules": Object {},
+  },
+}
+`;
