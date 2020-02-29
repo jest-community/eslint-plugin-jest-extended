@@ -6,7 +6,9 @@ Object {
     "plugins": Array [
       "jest-extended",
     ],
-    "rules": Object {},
+    "rules": Object {
+      "jest/prefer-to-be-true": "error",
+    },
   },
   "recommended": Object {
     "plugins": Array [
