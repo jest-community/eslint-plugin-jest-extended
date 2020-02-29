@@ -69,6 +69,7 @@ for installations requiring long-term consistency.
 
 | Rule                    | Description                  | Fixable            |
 | ----------------------- | ---------------------------- | ------------------ |
+| [prefer-to-be-false][]  | Suggest using `toBeFalse()`  | ![fixable-green][] |
 | [prefer-to-be-true][]   | Suggest using `toBeTrue()`   | ![fixable-green][] |
 
 ## Credit
@@ -90,6 +91,7 @@ ensure consistency and readability in jest test suites.
 
 https://github.com/dangreenisrael/eslint-plugin-jest-formatting
 
+[prefer-to-be-false]: docs/rules/prefer-to-be-false.md
 [prefer-to-be-true]: docs/rules/prefer-to-be-true.md
 [fixable-green]: https://img.shields.io/badge/-fixable-green.svg
 [fixable-yellow]: https://img.shields.io/badge/-fixable-yellow.svg
