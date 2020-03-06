@@ -6,7 +6,12 @@ Object {
     "plugins": Array [
       "jest-extended",
     ],
-    "rules": Object {},
+    "rules": Object {
+      "jest/prefer-to-be-array": "error",
+      "jest/prefer-to-be-false": "error",
+      "jest/prefer-to-be-object": "error",
+      "jest/prefer-to-be-true": "error",
+    },
   },
   "recommended": Object {
     "plugins": Array [
