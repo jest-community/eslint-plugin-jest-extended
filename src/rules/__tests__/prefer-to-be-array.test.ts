@@ -17,10 +17,9 @@ const expectInAndOutValues = [
   ['Array.isArray([])', '([])'],
 ];
 
-const createTestsForEqualityMatchers = (): Array<TSESLint.InvalidTestCase<
-  MessageIds,
-  Options
->> =>
+const createTestsForEqualityMatchers = (): Array<
+  TSESLint.InvalidTestCase<MessageIds, Options>
+> =>
   ['toBe', 'toEqual', 'toStrictEqual']
     .map(matcher =>
       expectInAndOutValues.map(([inValue, outValue]) => [

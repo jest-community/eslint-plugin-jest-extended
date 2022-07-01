@@ -6,10 +6,9 @@ const ruleTester = new TSESLint.RuleTester();
 // makes ts happy about the dynamic test generation
 const messageId = 'preferToBeObject' as const;
 
-const createTestsForEqualityMatchers = (): Array<TSESLint.InvalidTestCase<
-  MessageIds,
-  Options
->> =>
+const createTestsForEqualityMatchers = (): Array<
+  TSESLint.InvalidTestCase<MessageIds, Options>
+> =>
   ['toBe', 'toEqual', 'toStrictEqual']
     .map(matcher => [
       {
