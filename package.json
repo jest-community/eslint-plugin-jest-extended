@@ -54,6 +54,23 @@
     "singleQuote": true,
     "trailingComma": "all"
   },
+  "release": {
+    "branches": [
+      "main",
+      {
+        "name": "next",
+        "prerelease": true
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  },
   "jest": {
     "coverageThreshold": {
       "global": {
@@ -91,10 +108,10 @@
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-typescript": "^7.3.3",
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
-    "@semantic-release/changelog": "^3.0.5",
-    "@semantic-release/git": "^7.0.17",
+    "@commitlint/cli": "^16.0.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/git": "^10.0.0",
     "@types/jest": "^24.0.15",
     "@types/node": "^12.6.6",
     "@typescript-eslint/eslint-plugin": "^2.5.0",
@@ -117,7 +134,7 @@
     "prettier": "^2.7.0",
     "resolve-from": "^5.0.0",
     "rimraf": "^3.0.0",
-    "semantic-release": "^15.13.28",
+    "semantic-release": "^19.0.0",
     "typescript": "^3.8.3"
   },
   "peerDependencies": {
@@ -126,15 +143,5 @@
   "packageManager": "yarn@3.2.1",
   "engines": {
     "node": ">=8"
-  },
-  "release": {
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/git",
-      "@semantic-release/github"
-    ]
   }
 }
