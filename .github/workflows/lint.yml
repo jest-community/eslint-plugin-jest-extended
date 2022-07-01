@@ -5,10 +5,10 @@ jobs:
   commitlint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: wagoid/commitlint-github-action@v1.2.2
+      - uses: wagoid/commitlint-github-action@v5
         with:
           configFile: './package.json'
         env:
@@ -16,8 +16,8 @@ jobs:
   danger:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Danger
-        uses: danger/danger-js@9.1.8
+        uses: danger/danger-js@11.0.7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

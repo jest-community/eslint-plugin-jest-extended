@@ -1,17 +1,40 @@
-name: Unit tests
+name: Unit tests & Release
 
 on:
   push:
     branches:
       - master
+      - main
       - next
   pull_request:
     branches:
       - master
+      - main
       - next
 
 jobs:
+  prepare-yarn-cache:
+    name: Prepare yarn cache
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: yarn
+
+      - name: Validate cache
+        env:
+          # Use PnP and disable postinstall scripts as this just needs to
+          # populate the cache for the other jobs
+          YARN_NODE_LINKER: pnp
+          YARN_ENABLE_SCRIPTS: false
+        run: yarn --immutable
+
   prettier:
+    needs: prepare-yarn-cache
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -24,35 +47,53 @@ jobs:
       - name: run prettier
         run: yarn prettier:check
 
+  typecheck:
+    needs: prepare-yarn-cache
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: yarn
+      - name: install
+        run: yarn
+      - name: run typecheck
+        run: yarn typecheck
+
   test-node:
     name:
       # prettier-ignore
-      Test on Node.js v${{ matrix.node-version }} and eslint v${{matrix.eslint-version }}
+      Test on Node.js v${{ matrix.node-version }}, eslint v${{ matrix.eslint-version }}
+    needs: prepare-yarn-cache
     strategy:
       fail-fast: false
       matrix:
-        node-version: [8.x, 10.x, 12.x, 13.x]
-        eslint-version: [5, 6]
+        node-version: [12.x, 14.x, 16.x, 17.x, 18.x]
+        eslint-version: [6, 7, 8]
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install with eslint v${{matrix.eslint-version }}
+          cache: yarn
+      - name:
+          # prettier-ignore
+          install with eslint v${{ matrix.eslint-version }}
         run: |
           yarn
-          yarn add --dev eslint@${{matrix.eslint-version }}
-      - name: run typecheck
-        run: yarn typecheck
+          yarn add --dev eslint@${{ matrix.eslint-version }}
       - name: run tests
         run: yarn test --coverage
         env:
           CI: true
+      - uses: codecov/codecov-action@v3
   test-os:
     name: Test on ${{ matrix.os }} using Node.js LTS
+    needs: prepare-yarn-cache
     strategy:
       fail-fast: false
       matrix:
@@ -60,15 +101,35 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 12.x
+          node-version: lts/*
+          cache: yarn
       - name: install
         run: yarn
-      - name: run typecheck
-        run: yarn typecheck
       - name: run tests
         run: yarn test --coverage
         env:
           CI: true
+      - uses: codecov/codecov-action@v3
+
+  release:
+    if:
+      # prettier-ignore
+      ${{ github.event_name == 'push' && (github.event.ref == 'refs/heads/main' || github.event.ref == 'refs/heads/next') }}
+    name: Release new version
+    needs: [prettier, typecheck, test-node, test-os]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: yarn
+      - name: install
+        run: yarn
+      - run: yarn semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
