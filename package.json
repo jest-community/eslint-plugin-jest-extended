@@ -129,6 +129,7 @@
   "peerDependencies": {
     "eslint": ">=5"
   },
+  "packageManager": "yarn@3.2.1",
   "engines": {
     "node": ">=8"
   },
