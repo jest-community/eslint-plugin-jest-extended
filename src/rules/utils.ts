@@ -8,6 +8,7 @@ import { repository, version } from '../../package.json';
 
 export const createRule = ESLintUtils.RuleCreator(name => {
   const ruleName = parsePath(name).name;
+
   return `${repository}/blob/v${version}/docs/rules/${ruleName}.md`;
 });
 
@@ -497,6 +498,7 @@ export const parseExpectCall = <ExpectNode extends ExpectCall>(
   }
 
   const parsedMember = parseExpectMember(expect.parent);
+
   if (!shouldBeParsedExpectModifier(parsedMember)) {
     expectation.matcher = reparseAsMatcher(parsedMember);
 

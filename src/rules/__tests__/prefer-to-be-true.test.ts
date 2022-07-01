@@ -27,33 +27,33 @@ ruleTester.run('prefer-to-be-true', rule, {
   invalid: [
     {
       code: 'expect(false).toBe(true);',
-      errors: [{ messageId: 'preferToBeTrue', column: 15, line: 1 }],
       output: 'expect(false).toBeTrue();',
+      errors: [{ messageId: 'preferToBeTrue', column: 15, line: 1 }],
     },
     {
       code: 'expect(wasSuccessful).toEqual(true);',
-      errors: [{ messageId: 'preferToBeTrue', column: 23, line: 1 }],
       output: 'expect(wasSuccessful).toBeTrue();',
+      errors: [{ messageId: 'preferToBeTrue', column: 23, line: 1 }],
     },
     {
       code: "expect(fs.existsSync('/path/to/file')).toStrictEqual(true);",
-      errors: [{ messageId: 'preferToBeTrue', column: 40, line: 1 }],
       output: "expect(fs.existsSync('/path/to/file')).toBeTrue();",
+      errors: [{ messageId: 'preferToBeTrue', column: 40, line: 1 }],
     },
     {
       code: 'expect("a string").not.toBe(true);',
-      errors: [{ messageId: 'preferToBeTrue', column: 24, line: 1 }],
       output: 'expect("a string").not.toBeTrue();',
+      errors: [{ messageId: 'preferToBeTrue', column: 24, line: 1 }],
     },
     {
       code: 'expect("a string").not.toEqual(true);',
-      errors: [{ messageId: 'preferToBeTrue', column: 24, line: 1 }],
       output: 'expect("a string").not.toBeTrue();',
+      errors: [{ messageId: 'preferToBeTrue', column: 24, line: 1 }],
     },
     {
       code: 'expect("a string").not.toStrictEqual(true);',
-      errors: [{ messageId: 'preferToBeTrue', column: 24, line: 1 }],
       output: 'expect("a string").not.toBeTrue();',
+      errors: [{ messageId: 'preferToBeTrue', column: 24, line: 1 }],
     },
   ],
 });
@@ -67,13 +67,13 @@ new TSESLint.RuleTester({
   invalid: [
     {
       code: 'expect(true).toBe(true as unknown as string as unknown as any);',
-      errors: [{ messageId: 'preferToBeTrue', column: 14, line: 1 }],
       output: 'expect(true).toBeTrue();',
+      errors: [{ messageId: 'preferToBeTrue', column: 14, line: 1 }],
     },
     {
       code: 'expect("a string").not.toEqual(true as number);',
-      errors: [{ messageId: 'preferToBeTrue', column: 24, line: 1 }],
       output: 'expect("a string").not.toBeTrue();',
+      errors: [{ messageId: 'preferToBeTrue', column: 24, line: 1 }],
     },
   ],
 });
