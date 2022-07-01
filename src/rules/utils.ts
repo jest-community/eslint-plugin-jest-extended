@@ -3,7 +3,7 @@ import {
   AST_NODE_TYPES,
   ESLintUtils,
   TSESTree,
-} from '@typescript-eslint/experimental-utils';
+} from '@typescript-eslint/utils';
 import { repository, version } from '../../package.json';
 
 export const createRule = ESLintUtils.RuleCreator(name => {
@@ -70,11 +70,11 @@ interface StringLiteral<Value extends string = string>
  * the `value` will be compared to that of the `StringLiteral`.
  *
  * @param {Node} node
- * @param {V?} value
+ * @param {V} [value]
  *
  * @return {node is StringLiteral<V>}
  *
- * @template {V}.
+ * @template V
  */
 const isStringLiteral = <V extends string>(
   node: TSESTree.Node,
@@ -110,7 +110,7 @@ interface TemplateLiteral<Value extends string = string>
  * the `value` will be compared to that of the `TemplateLiteral`.
  *
  * @param {Node} node
- * @param {V?} value
+ * @param {V} [value]
  *
  * @return {node is TemplateLiteral<V>}
  *
@@ -132,7 +132,7 @@ export type StringNode<S extends string = string> =
  * Checks if the given `node` is a {@link StringNode}.
  *
  * @param {Node} node
- * @param {V?} specifics
+ * @param {V} [specifics]
  *
  * @return {node is StringNode}
  *
@@ -182,7 +182,7 @@ interface KnownIdentifier<Name extends string> extends TSESTree.Identifier {
  * the `name` will be compared to that of the `identifier`.
  *
  * @param {Node} node
- * @param {V?} name
+ * @param {V} [name]
  *
  * @return {node is KnownIdentifier<Name>}
  *
@@ -211,7 +211,7 @@ const isIdentifier = <V extends string>(
  * The property that holds the value is not always called `name`.
  *
  * @param {Node} node
- * @param {V?} value
+ * @param {V} [value]
  *
  * @return {node is AccessorNode<V>}
  *
@@ -324,7 +324,7 @@ export const isParsedEqualityMatcherCall = <
   MatcherName extends EqualityMatcher = EqualityMatcher,
 >(
   matcher: ParsedExpectMatcher,
-): matcher is ParsedEqualityMatcherCall =>
+): matcher is ParsedEqualityMatcherCall<TSESTree.Expression, MatcherName> =>
   EqualityMatcher.hasOwnProperty(matcher.name) &&
   matcher.arguments !== null &&
   matcher.arguments.length === 1;

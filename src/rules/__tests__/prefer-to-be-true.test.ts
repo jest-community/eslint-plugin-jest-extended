@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/experimental-utils';
+import { TSESLint } from '@typescript-eslint/utils';
 import rule from '../prefer-to-be-true';
 
 const ruleTester = new TSESLint.RuleTester();

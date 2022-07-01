@@ -8,13 +8,11 @@ module.exports = {
     'plugin:node/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
   ],
   plugins: [
     'eslint-plugin',
     'eslint-comments',
     'node',
-    'prettier',
     'import',
     '@typescript-eslint',
   ],
@@ -28,7 +26,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
     '@typescript-eslint/no-require-imports': 'error',
-    '@typescript-eslint/ban-ts-ignore': 'warn',
+    '@typescript-eslint/ban-ts-comment': 'warn',
     '@typescript-eslint/ban-types': 'error',
     '@typescript-eslint/no-unused-vars': 'error',
     'eslint-comments/no-unused-disable': 'error',

@@ -44,7 +44,7 @@ describe('rules', () => {
       ]);
 
     allConfigRules.forEach(rule => {
-      const ruleNamePrefix = 'jest/';
+      const ruleNamePrefix = 'jest-extended/';
       const ruleName = rule.slice(ruleNamePrefix.length);
 
       expect(rule.startsWith(ruleNamePrefix)).toBe(true);
