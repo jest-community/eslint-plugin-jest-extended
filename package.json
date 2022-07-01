@@ -25,16 +25,14 @@
     "lib/"
   ],
   "scripts": {
-    "build": "babel --extensions .js,.ts src --out-dir lib --copy-files",
-    "postbuild": "rimraf lib/__tests__ lib/**/__tests__",
+    "build": "babel --extensions .js,.ts src --out-dir lib --copy-files && rimraf lib/__tests__ 'lib/**/__tests__'",
     "postinstall": "is-ci || husky install",
     "lint": "eslint . --ignore-pattern '!.eslintrc.js' --ext js,ts",
-    "prepare": "yarn build && yarn postbuild",
+    "prepack": "rimraf lib && yarn build",
     "prepublishOnly": "pinst --disable",
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier --write .",
     "postpublish": "pinst --enable",
-    "pretest": "yarn build",
     "test": "jest",
     "typecheck": "tsc -p ."
   },
