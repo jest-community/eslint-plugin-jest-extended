@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/experimental-utils';
+import { TSESLint } from '@typescript-eslint/utils';
 import rule, { MessageIds, Options } from '../prefer-to-be-object';
 
 const ruleTester = new TSESLint.RuleTester();
@@ -6,10 +6,9 @@ const ruleTester = new TSESLint.RuleTester();
 // makes ts happy about the dynamic test generation
 const messageId = 'preferToBeObject' as const;
 
-const createTestsForEqualityMatchers = (): Array<TSESLint.InvalidTestCase<
-  MessageIds,
-  Options
->> =>
+const createTestsForEqualityMatchers = (): Array<
+  TSESLint.InvalidTestCase<MessageIds, Options>
+> =>
   ['toBe', 'toEqual', 'toStrictEqual']
     .map(matcher => [
       {
@@ -52,48 +51,48 @@ ruleTester.run('prefer-to-be-object', rule, {
     ...createTestsForEqualityMatchers(),
     {
       code: 'expect(({} instanceof Object)).toBeTrue();',
-      errors: [{ messageId, column: 32, line: 1 }],
       output: 'expect(({})).toBeObject();',
+      errors: [{ messageId, column: 32, line: 1 }],
     },
     {
       code: 'expect({} instanceof Object).toBeTrue();',
-      errors: [{ messageId, column: 30, line: 1 }],
       output: 'expect({}).toBeObject();',
+      errors: [{ messageId, column: 30, line: 1 }],
     },
     {
       code: 'expect({} instanceof Object).not.toBeTrue();',
-      errors: [{ messageId, column: 34, line: 1 }],
       output: 'expect({}).not.toBeObject();',
+      errors: [{ messageId, column: 34, line: 1 }],
     },
     {
       code: 'expect({} instanceof Object).toBeFalse();',
-      errors: [{ messageId, column: 30, line: 1 }],
       output: 'expect({}).not.toBeObject();',
+      errors: [{ messageId, column: 30, line: 1 }],
     },
     {
       code: 'expect({} instanceof Object).not.toBeFalse();',
-      errors: [{ messageId, column: 34, line: 1 }],
       output: 'expect({}).toBeObject();',
+      errors: [{ messageId, column: 34, line: 1 }],
     },
     {
       code: 'expect({}).toBeInstanceOf(Object);',
-      errors: [{ messageId, column: 12, line: 1 }],
       output: 'expect({}).toBeObject();',
+      errors: [{ messageId, column: 12, line: 1 }],
     },
     {
       code: 'expect({}).not.toBeInstanceOf(Object);',
-      errors: [{ messageId, column: 16, line: 1 }],
       output: 'expect({}).not.toBeObject();',
+      errors: [{ messageId, column: 16, line: 1 }],
     },
     {
       code: 'expect(requestValues()).resolves.toBeInstanceOf(Object);',
-      errors: [{ messageId, column: 34, line: 1 }],
       output: 'expect(requestValues()).resolves.toBeObject();',
+      errors: [{ messageId, column: 34, line: 1 }],
     },
     {
       code: 'expect(queryApi()).resolves.not.toBeInstanceOf(Object);',
-      errors: [{ messageId, column: 33, line: 1 }],
       output: 'expect(queryApi()).resolves.not.toBeObject();',
+      errors: [{ messageId, column: 33, line: 1 }],
     },
   ],
 });

@@ -3,11 +3,12 @@ import {
   AST_NODE_TYPES,
   ESLintUtils,
   TSESTree,
-} from '@typescript-eslint/experimental-utils';
+} from '@typescript-eslint/utils';
 import { repository, version } from '../../package.json';
 
 export const createRule = ESLintUtils.RuleCreator(name => {
   const ruleName = parsePath(name).name;
+
   return `${repository}/blob/v${version}/docs/rules/${ruleName}.md`;
 });
 
@@ -16,17 +17,17 @@ export type MaybeTypeCast<Expression extends TSESTree.Expression> =
   | Expression;
 
 type TSTypeCastExpression<
-  Expression extends TSESTree.Expression = TSESTree.Expression
+  Expression extends TSESTree.Expression = TSESTree.Expression,
 > = AsExpressionChain<Expression> | TypeAssertionChain<Expression>;
 
 interface AsExpressionChain<
-  Expression extends TSESTree.Expression = TSESTree.Expression
+  Expression extends TSESTree.Expression = TSESTree.Expression,
 > extends TSESTree.TSAsExpression {
   expression: AsExpressionChain<Expression> | Expression;
 }
 
 interface TypeAssertionChain<
-  Expression extends TSESTree.Expression = TSESTree.Expression
+  Expression extends TSESTree.Expression = TSESTree.Expression,
 > extends TSESTree.TSTypeAssertion {
   expression: TypeAssertionChain<Expression> | Expression;
 }
@@ -38,7 +39,7 @@ const isTypeCastExpression = <Expression extends TSESTree.Expression>(
   node.type === AST_NODE_TYPES.TSTypeAssertion;
 
 export const followTypeAssertionChain = <
-  Expression extends TSESTree.Expression
+  Expression extends TSESTree.Expression,
 >(
   expression: MaybeTypeCast<Expression>,
 ): Expression =>
@@ -69,11 +70,11 @@ interface StringLiteral<Value extends string = string>
  * the `value` will be compared to that of the `StringLiteral`.
  *
  * @param {Node} node
- * @param {V?} value
+ * @param {V} [value]
  *
  * @return {node is StringLiteral<V>}
  *
- * @template {V}.
+ * @template V
  */
 const isStringLiteral = <V extends string>(
   node: TSESTree.Node,
@@ -109,7 +110,7 @@ interface TemplateLiteral<Value extends string = string>
  * the `value` will be compared to that of the `TemplateLiteral`.
  *
  * @param {Node} node
- * @param {V?} value
+ * @param {V} [value]
  *
  * @return {node is TemplateLiteral<V>}
  *
@@ -131,7 +132,7 @@ export type StringNode<S extends string = string> =
  * Checks if the given `node` is a {@link StringNode}.
  *
  * @param {Node} node
- * @param {V?} specifics
+ * @param {V} [specifics]
  *
  * @return {node is StringNode}
  *
@@ -181,7 +182,7 @@ interface KnownIdentifier<Name extends string> extends TSESTree.Identifier {
  * the `name` will be compared to that of the `identifier`.
  *
  * @param {Node} node
- * @param {V?} name
+ * @param {V} [name]
  *
  * @return {node is KnownIdentifier<Name>}
  *
@@ -210,7 +211,7 @@ const isIdentifier = <V extends string>(
  * The property that holds the value is not always called `name`.
  *
  * @param {Node} node
- * @param {V?} value
+ * @param {V} [value]
  *
  * @return {node is AccessorNode<V>}
  *
@@ -267,7 +268,7 @@ export const isExpectCall = (node: TSESTree.Node): node is ExpectCall =>
 
 interface ParsedExpectMember<
   Name extends ExpectPropertyName = ExpectPropertyName,
-  Node extends ExpectMember<Name> = ExpectMember<Name>
+  Node extends ExpectMember<Name> = ExpectMember<Name>,
 > {
   name: Name;
   node: Node;
@@ -278,14 +279,14 @@ interface ParsedExpectMember<
  */
 interface ExpectMember<
   PropertyName extends ExpectPropertyName = ExpectPropertyName,
-  Parent extends TSESTree.Node | undefined = TSESTree.Node | undefined
+  Parent extends TSESTree.Node | undefined = TSESTree.Node | undefined,
 > extends KnownMemberExpression<PropertyName> {
   object: ExpectCall | ExpectMember;
   parent: Parent;
 }
 
 export const isExpectMember = <
-  Name extends ExpectPropertyName = ExpectPropertyName
+  Name extends ExpectPropertyName = ExpectPropertyName,
 >(
   node: TSESTree.Node,
   name?: Name,
@@ -301,7 +302,7 @@ type ExpectPropertyName = ModifierName | MatcherName;
 
 export type ParsedEqualityMatcherCall<
   Argument extends TSESTree.Expression = TSESTree.Expression,
-  Matcher extends EqualityMatcher = EqualityMatcher
+  Matcher extends EqualityMatcher = EqualityMatcher,
 > = Omit<ParsedExpectMatcher<Matcher>, 'arguments'> & {
   // todo: probs should also type node parent as CallExpression
   arguments: [Argument];
@@ -320,10 +321,10 @@ export enum EqualityMatcher {
 }
 
 export const isParsedEqualityMatcherCall = <
-  MatcherName extends EqualityMatcher = EqualityMatcher
+  MatcherName extends EqualityMatcher = EqualityMatcher,
 >(
   matcher: ParsedExpectMatcher,
-): matcher is ParsedEqualityMatcherCall =>
+): matcher is ParsedEqualityMatcherCall<TSESTree.Expression, MatcherName> =>
   EqualityMatcher.hasOwnProperty(matcher.name) &&
   matcher.arguments !== null &&
   matcher.arguments.length === 1;
@@ -361,7 +362,7 @@ export const isBooleanEqualityMatcher = (
  */
 export interface ParsedExpectMatcher<
   Matcher extends MatcherName = MatcherName,
-  Node extends ExpectMember<Matcher> = ExpectMember<Matcher>
+  Node extends ExpectMember<Matcher> = ExpectMember<Matcher>,
 > extends ParsedExpectMember<Matcher, Node> {
   /**
    * The arguments being passed to the matcher.
@@ -370,9 +371,8 @@ export interface ParsedExpectMatcher<
   arguments: TSESTree.CallExpression['arguments'] | null;
 }
 
-type BaseParsedModifier<
-  Modifier extends ModifierName = ModifierName
-> = ParsedExpectMember<Modifier>;
+type BaseParsedModifier<Modifier extends ModifierName = ModifierName> =
+  ParsedExpectMember<Modifier>;
 
 type NegatableModifierName = ModifierName.rejects | ModifierName.resolves;
 type NotNegatableModifierName = ModifierName.not;
@@ -381,7 +381,7 @@ type NotNegatableModifierName = ModifierName.not;
  * Represents a parsed modifier that can be followed by a `not` negation modifier.
  */
 interface NegatableParsedModifier<
-  Modifier extends NegatableModifierName = NegatableModifierName
+  Modifier extends NegatableModifierName = NegatableModifierName,
 > extends BaseParsedModifier<Modifier> {
   negation?: ExpectMember<ModifierName.not>;
 }
@@ -390,7 +390,7 @@ interface NegatableParsedModifier<
  * Represents a parsed modifier that cannot be followed by a `not` negation modifier.
  */
 export interface NotNegatableParsedModifier<
-  Modifier extends NotNegatableModifierName = NotNegatableModifierName
+  Modifier extends NotNegatableModifierName = NotNegatableModifierName,
 > extends BaseParsedModifier<Modifier> {
   negation?: never;
 }
@@ -498,15 +498,15 @@ export const parseExpectCall = <ExpectNode extends ExpectCall>(
   }
 
   const parsedMember = parseExpectMember(expect.parent);
+
   if (!shouldBeParsedExpectModifier(parsedMember)) {
     expectation.matcher = reparseAsMatcher(parsedMember);
 
     return expectation;
   }
 
-  const modifier = (expectation.modifier = reparseMemberAsModifier(
-    parsedMember,
-  ));
+  const modifier = (expectation.modifier =
+    reparseMemberAsModifier(parsedMember));
 
   const memberNode = modifier.negation || modifier.node;
 

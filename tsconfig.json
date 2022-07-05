@@ -1,14 +1,9 @@
 {
+  "extends": "@tsconfig/node12/tsconfig.json",
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
     "noEmit": true,
     "noImplicitReturns": true,
-    "strict": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "forceConsistentCasingInFileNames": true
+    "resolveJsonModule": true
   },
   "include": ["src/**/*"]
 }

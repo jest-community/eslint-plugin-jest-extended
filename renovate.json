@@ -1,8 +1,0 @@
-{
-  "extends": [
-    "config:base"
-  ],
-  "lockFileMaintenance": { "enabled": true },
-  "rangeStrategy": "replace",
-  "ignorePresets": ["group:semantic-releaseMonorepo"]
-}

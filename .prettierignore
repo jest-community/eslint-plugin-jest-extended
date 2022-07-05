@@ -1,0 +1,4 @@
+.yarn/*
+lib/*
+coverage/*
+CHANGELOG.md

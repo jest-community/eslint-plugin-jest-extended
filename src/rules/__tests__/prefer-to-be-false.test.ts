@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/experimental-utils';
+import { TSESLint } from '@typescript-eslint/utils';
 import rule from '../prefer-to-be-false';
 
 const ruleTester = new TSESLint.RuleTester();
@@ -27,33 +27,33 @@ ruleTester.run('prefer-to-be-false', rule, {
   invalid: [
     {
       code: 'expect(true).toBe(false);',
-      errors: [{ messageId: 'preferToBeFalse', column: 14, line: 1 }],
       output: 'expect(true).toBeFalse();',
+      errors: [{ messageId: 'preferToBeFalse', column: 14, line: 1 }],
     },
     {
       code: 'expect(wasSuccessful).toEqual(false);',
-      errors: [{ messageId: 'preferToBeFalse', column: 23, line: 1 }],
       output: 'expect(wasSuccessful).toBeFalse();',
+      errors: [{ messageId: 'preferToBeFalse', column: 23, line: 1 }],
     },
     {
       code: "expect(fs.existsSync('/path/to/file')).toStrictEqual(false);",
-      errors: [{ messageId: 'preferToBeFalse', column: 40, line: 1 }],
       output: "expect(fs.existsSync('/path/to/file')).toBeFalse();",
+      errors: [{ messageId: 'preferToBeFalse', column: 40, line: 1 }],
     },
     {
       code: 'expect("a string").not.toBe(false);',
-      errors: [{ messageId: 'preferToBeFalse', column: 24, line: 1 }],
       output: 'expect("a string").not.toBeFalse();',
+      errors: [{ messageId: 'preferToBeFalse', column: 24, line: 1 }],
     },
     {
       code: 'expect("a string").not.toEqual(false);',
-      errors: [{ messageId: 'preferToBeFalse', column: 24, line: 1 }],
       output: 'expect("a string").not.toBeFalse();',
+      errors: [{ messageId: 'preferToBeFalse', column: 24, line: 1 }],
     },
     {
       code: 'expect("a string").not.toStrictEqual(false);',
-      errors: [{ messageId: 'preferToBeFalse', column: 24, line: 1 }],
       output: 'expect("a string").not.toBeFalse();',
+      errors: [{ messageId: 'preferToBeFalse', column: 24, line: 1 }],
     },
   ],
 });
@@ -67,13 +67,13 @@ new TSESLint.RuleTester({
   invalid: [
     {
       code: 'expect(true).toBe(false as unknown as string as unknown as any);',
-      errors: [{ messageId: 'preferToBeFalse', column: 14, line: 1 }],
       output: 'expect(true).toBeFalse();',
+      errors: [{ messageId: 'preferToBeFalse', column: 14, line: 1 }],
     },
     {
       code: 'expect("a string").not.toEqual(false as number);',
-      errors: [{ messageId: 'preferToBeFalse', column: 24, line: 1 }],
       output: 'expect("a string").not.toBeFalse();',
+      errors: [{ messageId: 'preferToBeFalse', column: 24, line: 1 }],
     },
   ],
 });

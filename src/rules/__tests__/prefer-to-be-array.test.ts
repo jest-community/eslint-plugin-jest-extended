@@ -1,9 +1,9 @@
-import { TSESLint } from '@typescript-eslint/experimental-utils';
-import resolveFrom from 'resolve-from';
+import { TSESLint } from '@typescript-eslint/utils';
 import rule, { MessageIds, Options } from '../prefer-to-be-array';
+import { espreeParser } from './test-utils';
 
 const ruleTester = new TSESLint.RuleTester({
-  parser: resolveFrom(require.resolve('eslint'), 'espree'),
+  parser: espreeParser,
   parserOptions: {
     ecmaVersion: 2017,
   },
@@ -17,10 +17,9 @@ const expectInAndOutValues = [
   ['Array.isArray([])', '([])'],
 ];
 
-const createTestsForEqualityMatchers = (): Array<TSESLint.InvalidTestCase<
-  MessageIds,
-  Options
->> =>
+const createTestsForEqualityMatchers = (): Array<
+  TSESLint.InvalidTestCase<MessageIds, Options>
+> =>
   ['toBe', 'toEqual', 'toStrictEqual']
     .map(matcher =>
       expectInAndOutValues.map(([inValue, outValue]) => [
@@ -90,33 +89,33 @@ ruleTester.run('prefer-to-be-array', rule, {
 
     {
       code: 'expect(Array["isArray"]([])).toBe(true);',
-      errors: [{ messageId, column: 30, line: 1 }],
       output: 'expect(([])).toBeArray();',
+      errors: [{ messageId, column: 30, line: 1 }],
     },
     {
       code: 'expect(Array[`isArray`]([])).toBe(true);',
-      errors: [{ messageId, column: 30, line: 1 }],
       output: 'expect(([])).toBeArray();',
+      errors: [{ messageId, column: 30, line: 1 }],
     },
     {
       code: 'expect([]).toBeInstanceOf(Array);',
-      errors: [{ messageId, column: 12, line: 1 }],
       output: 'expect([]).toBeArray();',
+      errors: [{ messageId, column: 12, line: 1 }],
     },
     {
       code: 'expect([]).not.toBeInstanceOf(Array);',
-      errors: [{ messageId, column: 16, line: 1 }],
       output: 'expect([]).not.toBeArray();',
+      errors: [{ messageId, column: 16, line: 1 }],
     },
     {
       code: 'expect(requestValues()).resolves.toBeInstanceOf(Array);',
-      errors: [{ messageId, column: 34, line: 1 }],
       output: 'expect(requestValues()).resolves.toBeArray();',
+      errors: [{ messageId, column: 34, line: 1 }],
     },
     {
       code: 'expect(queryApi()).rejects.not.toBeInstanceOf(Array);',
-      errors: [{ messageId, column: 32, line: 1 }],
       output: 'expect(queryApi()).rejects.not.toBeArray();',
+      errors: [{ messageId, column: 32, line: 1 }],
     },
   ],
 });
