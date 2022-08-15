@@ -5,8 +5,8 @@
   <a href="https://facebook.github.io/jest/">
     <img width="150" height="150" vspace="" hspace="25" src="https://jestjs.io/img/jest.png">
   </a>
-  <h1>eslint-plugin-jest</h1>
-  <p>ESLint plugin for Jest</p>
+  <h1>eslint-plugin-jest-extended</h1>
+  <p>ESLint plugin for Jest Extended</p>
 </div>
 
 [![Actions Status](https://github.com/jest-community/eslint-plugin-jest-extended/workflows/Unit%20tests/badge.svg?branch=master)](https://github.com/jest-community/eslint-plugin-jest-extended/actions)
