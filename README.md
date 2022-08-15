@@ -1,12 +1,12 @@
 <div align="center">
   <a href="https://eslint.org/">
-    <img width="150" height="150" src="https://eslint.org/assets/img/logo.svg">
+    <img height="150" src="https://eslint.org/assets/images/logo/eslint-logo-color.svg">
   </a>
   <a href="https://facebook.github.io/jest/">
     <img width="150" height="150" vspace="" hspace="25" src="https://jestjs.io/img/jest.png">
   </a>
-  <h1>eslint-plugin-jest-extended</h1>
-  <p>ESLint plugin for Jest Extended</p>
+  <h1>eslint-plugin-jest</h1>
+  <p>ESLint plugin for Jest</p>
 </div>
 
 [![Actions Status](https://github.com/jest-community/eslint-plugin-jest-extended/workflows/Unit%20tests/badge.svg?branch=master)](https://github.com/jest-community/eslint-plugin-jest-extended/actions)
