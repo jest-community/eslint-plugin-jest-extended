@@ -1,4 +1,4 @@
-# Suggest using `toBeObject()` (prefer-to-be-object)
+# Suggest using `toBeObject()` (`prefer-to-be-object`)
 
 For expecting a value to be an object, `jest-extended` provides the `toBeObject`
 matcher.

@@ -67,12 +67,16 @@ for installations requiring long-term consistency.
 
 ## Rules
 
-| Rule                    | Description                  | Fixable            |
-| ----------------------- | ---------------------------- | ------------------ |
-| [prefer-to-be-array][]  | Suggest using `toBeArray()`  | ![fixable-green][] |
-| [prefer-to-be-false][]  | Suggest using `toBeFalse()`  | ![fixable-green][] |
-| [prefer-to-be-object][] | Suggest using `toBeObject()` | ![fixable-green][] |
-| [prefer-to-be-true][]   | Suggest using `toBeTrue()`   | ![fixable-green][] |
+<!-- begin base rules list -->
+
+| Rule                                                     | Description                  | Fixable      |
+| -------------------------------------------------------- | ---------------------------- | ------------ |
+| [prefer-to-be-array](docs/rules/prefer-to-be-array.md)   | Suggest using `toBeArray()`  | ![fixable][] |
+| [prefer-to-be-false](docs/rules/prefer-to-be-false.md)   | Suggest using `toBeFalse()`  | ![fixable][] |
+| [prefer-to-be-object](docs/rules/prefer-to-be-object.md) | Suggest using `toBeObject()` | ![fixable][] |
+| [prefer-to-be-true](docs/rules/prefer-to-be-true.md)     | Suggest using `toBeTrue()`   | ![fixable][] |
+
+<!-- end base rules list -->
 
 ## Credit
 
@@ -93,9 +97,4 @@ ensure consistency and readability in jest test suites.
 
 https://github.com/dangreenisrael/eslint-plugin-jest-formatting
 
-[prefer-to-be-array]: docs/rules/prefer-to-be-array.md
-[prefer-to-be-false]: docs/rules/prefer-to-be-false.md
-[prefer-to-be-object]: docs/rules/prefer-to-be-object.md
-[prefer-to-be-true]: docs/rules/prefer-to-be-true.md
-[fixable-green]: https://img.shields.io/badge/-fixable-green.svg
-[fixable-yellow]: https://img.shields.io/badge/-fixable-yellow.svg
+[fixable]: https://img.shields.io/badge/-fixable-green.svg

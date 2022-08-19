@@ -87,6 +87,12 @@ module.exports = {
       },
     },
     {
+      files: ['tools/*'],
+      rules: {
+        'node/shebang': 'off',
+      },
+    },
+    {
       files: ['.eslintrc.js', 'babel.config.js'],
       rules: {
         '@typescript-eslint/no-require-imports': 'off',
