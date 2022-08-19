@@ -69,12 +69,13 @@ for installations requiring long-term consistency.
 
 <!-- begin base rules list -->
 
-| Rule                                                     | Description                  | Fixable      |
-| -------------------------------------------------------- | ---------------------------- | ------------ |
-| [prefer-to-be-array](docs/rules/prefer-to-be-array.md)   | Suggest using `toBeArray()`  | ![fixable][] |
-| [prefer-to-be-false](docs/rules/prefer-to-be-false.md)   | Suggest using `toBeFalse()`  | ![fixable][] |
-| [prefer-to-be-object](docs/rules/prefer-to-be-object.md) | Suggest using `toBeObject()` | ![fixable][] |
-| [prefer-to-be-true](docs/rules/prefer-to-be-true.md)     | Suggest using `toBeTrue()`   | ![fixable][] |
+| Rule                                                                             | Description                            | Fixable      |
+| -------------------------------------------------------------------------------- | -------------------------------------- | ------------ |
+| [prefer-to-be-array](docs/rules/prefer-to-be-array.md)                           | Suggest using `toBeArray()`            | ![fixable][] |
+| [prefer-to-be-false](docs/rules/prefer-to-be-false.md)                           | Suggest using `toBeFalse()`            | ![fixable][] |
+| [prefer-to-be-object](docs/rules/prefer-to-be-object.md)                         | Suggest using `toBeObject()`           | ![fixable][] |
+| [prefer-to-be-true](docs/rules/prefer-to-be-true.md)                             | Suggest using `toBeTrue()`             | ![fixable][] |
+| [prefer-to-have-been-called-once](docs/rules/prefer-to-have-been-called-once.md) | Suggest using `toHaveBeenCalledOnce()` | ![fixable][] |
 
 <!-- end base rules list -->
 

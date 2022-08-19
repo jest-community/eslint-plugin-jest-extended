@@ -11,6 +11,7 @@ Object {
       "jest-extended/prefer-to-be-false": "error",
       "jest-extended/prefer-to-be-object": "error",
       "jest-extended/prefer-to-be-true": "error",
+      "jest-extended/prefer-to-have-been-called-once": "error",
     },
   },
   "recommended": Object {
