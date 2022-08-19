@@ -6,7 +6,7 @@
     <img width="150" height="150" vspace="" hspace="25" src="https://jestjs.io/img/jest.png">
   </a>
   <h1>eslint-plugin-jest-extended</h1>
-  <p>ESLint plugin for Jest Extended</p>
+  <p>ESLint plugin for <a href="https://github.com/jest-community/jest-extended">Jest Extended</a></p>
 </div>
 
 [![Actions Status](https://github.com/jest-community/eslint-plugin-jest-extended/workflows/Unit%20tests/badge.svg?branch=master)](https://github.com/jest-community/eslint-plugin-jest-extended/actions)
