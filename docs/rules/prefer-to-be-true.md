@@ -1,4 +1,4 @@
-# Suggest using `toBeTrue()` (prefer-to-be-true)
+# Suggest using `toBeTrue()` (`prefer-to-be-true`)
 
 For expecting a value to be `true`, `jest-extended` provides the `toBeTrue`
 matcher.

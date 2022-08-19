@@ -1,4 +1,4 @@
-# Suggest using `toBeFalse()` (prefer-to-be-false)
+# Suggest using `toBeFalse()` (`prefer-to-be-false`)
 
 For expecting a value to be `false`, `jest-extended` provides the `toBeFalse`
 matcher.

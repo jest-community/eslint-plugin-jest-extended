@@ -1,4 +1,4 @@
-# Suggest using `toBeArray()` (prefer-to-be-array)
+# Suggest using `toBeArray()` (`prefer-to-be-array`)
 
 For expecting a value to be an array, `jest-extended` provides the `toBeArray`
 matcher.
