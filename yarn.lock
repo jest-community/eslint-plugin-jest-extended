@@ -2307,6 +2307,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@schemastore/package@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "@schemastore/package@npm:0.0.6"
+  checksum: 40cd45f27bea78dd5274b7d7f5e544c88442ec67e378abfee274fa781ce802ccfa495d78cbb5c182717810095df7bc1594062de56909d89bb235ce2f905f0d0c
+  languageName: node
+  linkType: hard
+
 "@semantic-release/changelog@npm:^6.0.0":
   version: 6.0.1
   resolution: "@semantic-release/changelog@npm:6.0.1"
@@ -2537,6 +2544,13 @@ __metadata:
   dependencies:
     "@babel/types": ^7.3.0
   checksum: 5fd7f4ea0963f9669b1bd6bd928b2d81452b98e4acfcfeb26ca4476162b87f9c1d8f66ff13567fd9f760a31ad04c36d767fa874f569aded6fb46890e379327c1
+  languageName: node
+  linkType: hard
+
+"@types/dedent@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "@types/dedent@npm:0.7.0"
+  checksum: b9b7f0c42d99da764be75dd00b2f2be162f5a0ca43aafe0c740efa76b5f37f8a4f4e2ccc84883054e06e05c1169733aa8ee7750da0334c9cba26d9e10ae844f1
   languageName: node
   linkType: hard
 
@@ -4369,9 +4383,11 @@ __metadata:
     "@babel/preset-typescript": ^7.3.3
     "@commitlint/cli": ^16.0.0
     "@commitlint/config-conventional": ^16.0.0
+    "@schemastore/package": ^0.0.6
     "@semantic-release/changelog": ^6.0.0
     "@semantic-release/git": ^10.0.0
     "@tsconfig/node12": ^1.0.11
+    "@types/dedent": ^0.7.0
     "@types/jest": ^28.0.0
     "@types/node": ^16.0.0
     "@types/prettier": ^2.7.0
@@ -4380,6 +4396,7 @@ __metadata:
     "@typescript-eslint/utils": ^5.10.0
     babel-jest: ^28.0.0
     babel-plugin-replace-ts-export-assignment: ^0.0.2
+    dedent: ^0.7.0
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-eslint-comments: ^3.1.2

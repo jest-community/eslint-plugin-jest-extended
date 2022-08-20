@@ -1,13 +1,10 @@
 import { AST_NODE_TYPES, TSESTree } from '@typescript-eslint/utils';
 import {
-  MaybeTypeCast,
-  ParsedEqualityMatcherCall,
-  ParsedExpectMatcher,
+  EqualityMatcher,
   createRule,
-  followTypeAssertionChain,
-  isExpectCall,
-  isParsedEqualityMatcherCall,
-  parseExpectCall,
+  getAccessorValue,
+  getFirstMatcherArg,
+  parseJestFnCall,
 } from './utils';
 
 interface TrueLiteral extends TSESTree.BooleanLiteral {
@@ -16,20 +13,6 @@ interface TrueLiteral extends TSESTree.BooleanLiteral {
 
 const isTrueLiteral = (node: TSESTree.Node): node is TrueLiteral =>
   node.type === AST_NODE_TYPES.Literal && node.value === true;
-
-/**
- * Checks if the given `ParsedExpectMatcher` is a call to one of the equality matchers,
- * with a `true` literal as the sole argument.
- *
- * @param {ParsedExpectMatcher} matcher
- *
- * @return {matcher is ParsedEqualityMatcherCall<MaybeTypeCast<TrueLiteral>>}
- */
-const isTrueEqualityMatcher = (
-  matcher: ParsedExpectMatcher,
-): matcher is ParsedEqualityMatcherCall<MaybeTypeCast<TrueLiteral>> =>
-  isParsedEqualityMatcherCall(matcher) &&
-  isTrueLiteral(followTypeAssertionChain(matcher.arguments[0]));
 
 export default createRule({
   name: __filename,
@@ -50,19 +33,23 @@ export default createRule({
   create(context) {
     return {
       CallExpression(node) {
-        if (!isExpectCall(node)) {
+        const jestFnCall = parseJestFnCall(node, context);
+
+        if (jestFnCall?.type !== 'expect') {
           return;
         }
 
-        const { matcher } = parseExpectCall(node);
-
-        if (matcher && isTrueEqualityMatcher(matcher)) {
+        if (
+          jestFnCall.args.length === 1 &&
+          isTrueLiteral(getFirstMatcherArg(jestFnCall)) &&
+          EqualityMatcher.hasOwnProperty(getAccessorValue(jestFnCall.matcher))
+        ) {
           context.report({
-            node: matcher.node.property,
+            node: jestFnCall.matcher,
             messageId: 'preferToBeTrue',
             fix: fixer => [
-              fixer.replaceText(matcher.node.property, 'toBeTrue'),
-              fixer.remove(matcher.arguments[0]),
+              fixer.replaceText(jestFnCall.matcher, 'toBeTrue'),
+              fixer.remove(jestFnCall.args[0]),
             ],
           });
         }

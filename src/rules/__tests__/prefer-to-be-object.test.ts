@@ -37,6 +37,7 @@ const createTestsForEqualityMatchers = (): Array<
 ruleTester.run('prefer-to-be-object', rule, {
   valid: [
     'expect.hasAssertions',
+    'expect.hasAssertions()',
     'expect',
     'expect().not',
     'expect().toBe',
