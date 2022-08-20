@@ -469,7 +469,7 @@ if (eslintVersion >= 8) {
       {
         code: dedent`
           const { it } = await import("@jest/globals");
-  
+
           it('is a jest function', () => {});
         `,
         parserOptions: { sourceType: 'module', ecmaVersion: 2022 },
@@ -495,7 +495,7 @@ if (eslintVersion >= 8) {
       {
         code: dedent`
           const { it } = await import(\`@jest/globals\`);
-  
+
           it('is a jest function', () => {});
         `,
         parserOptions: { sourceType: 'module', ecmaVersion: 2022 },
@@ -809,6 +809,105 @@ ruleTester.run('typescript', rule, {
           }),
           column: 1,
           line: 4,
+        },
+      ],
+    },
+  ],
+});
+
+ruleTester.run('misc', rule, {
+  valid: [
+    'var spyOn = require("actions"); spyOn("foo")',
+    'test().finally()',
+    'expect(true).not.not.toBeDefined();',
+    'expect(true).resolves.not.exactly.toBeDefined();',
+  ],
+  invalid: [
+    {
+      code: 'beforeEach(() => {});',
+      errors: [
+        {
+          messageId: 'details' as const,
+          data: expectedParsedJestFnCallResultData({
+            name: 'beforeEach',
+            type: 'hook',
+            head: {
+              original: null,
+              local: 'beforeEach',
+              type: 'global',
+              node: 'beforeEach',
+            },
+            members: [],
+          }),
+          column: 1,
+          line: 1,
+        },
+      ],
+    },
+    {
+      code: 'jest.spyOn(console, "log");',
+      errors: [
+        {
+          messageId: 'details' as const,
+          data: expectedParsedJestFnCallResultData({
+            name: 'jest',
+            type: 'jest',
+            head: {
+              original: null,
+              local: 'jest',
+              type: 'global',
+              node: 'jest',
+            },
+            members: ['spyOn'],
+          }),
+          column: 1,
+          line: 1,
+        },
+      ],
+    },
+    {
+      code: dedent`
+        test('valid-expect-in-promise', async () => {
+          const text = await fetch('url')
+            .then(res => res.text())
+            .then(text => text);
+
+          expect(text).toBe('text');
+        });
+      `,
+      parserOptions: { ecmaVersion: 2017 },
+      errors: [
+        {
+          messageId: 'details' as const,
+          data: expectedParsedJestFnCallResultData({
+            name: 'test',
+            type: 'test',
+            head: {
+              original: null,
+              local: 'test',
+              type: 'global',
+              node: 'test',
+            },
+            members: [],
+          }),
+          column: 1,
+          line: 1,
+        },
+        {
+          messageId: 'details' as const,
+          data: expectedParsedJestFnCallResultData({
+            name: 'expect',
+            type: 'expect',
+            head: {
+              original: null,
+              local: 'expect',
+              type: 'global',
+              node: 'expect',
+            },
+            members: ['toBe'],
+          }),
+          column: 3,
+          line: 6,
         },
       ],
     },

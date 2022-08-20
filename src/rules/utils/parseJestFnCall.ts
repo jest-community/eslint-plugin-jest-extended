@@ -195,6 +195,7 @@ export const parseJestFnCallWithReason = (
 ): ParsedJestFnCall | string | null => {
   let parsedJestFnCall = parseJestFnCallCache.get(node);
 
+  /* istanbul ignore next */
   if (parsedJestFnCall) {
     return parsedJestFnCall;
   }
