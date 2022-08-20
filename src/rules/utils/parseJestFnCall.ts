@@ -14,16 +14,6 @@ import {
   isSupportedAccessor,
 } from '../utils';
 
-export const isTypeOfJestFnCall = (
-  node: TSESTree.CallExpression,
-  context: TSESLint.RuleContext<string, unknown[]>,
-  types: JestFnType[],
-): boolean => {
-  const jestFnCall = parseJestFnCall(node, context);
-
-  return jestFnCall !== null && types.includes(jestFnCall.type);
-};
-
 const joinChains = (
   a: AccessorNode[] | null,
   b: AccessorNode[] | null,
@@ -583,21 +573,4 @@ const resolveToJestFn = (
     local: identifier,
     type: 'global',
   };
-};
-
-export const scopeHasLocalReference = (
-  scope: TSESLint.Scope.Scope,
-  referenceName: string,
-) => {
-  const references = collectReferences(scope);
-
-  return (
-    // referenceName was found as a local variable or function declaration.
-    references.locals.has(referenceName) ||
-    // referenceName was found as an imported identifier
-    references.imports.has(referenceName) ||
-    // referenceName was not found as an unresolved reference,
-    // meaning it is likely not an implicit global reference.
-    !references.unresolved.has(referenceName)
-  );
 };
