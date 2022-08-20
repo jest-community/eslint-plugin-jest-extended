@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v1.1.0...v1.2.0) (2022-08-20)
+
+
+### Features
+
+* switch to new scope-based jest fn call parser to support `@jest/globals` ([#20](https://github.com/jest-community/eslint-plugin-jest-extended/issues/20)) ([35ddfed](https://github.com/jest-community/eslint-plugin-jest-extended/commit/35ddfedd58de975ca2c235a5295dfa28aab11ac5))
+
 # [1.1.0](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v1.0.0...v1.1.0) (2022-08-20)
 
 
