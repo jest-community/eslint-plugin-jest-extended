@@ -1,14 +1,13 @@
 import { AST_NODE_TYPES, TSESTree } from '@typescript-eslint/utils';
 import {
-  ModifierName,
   createRule,
   followTypeAssertionChain,
+  getAccessorValue,
   isBooleanEqualityMatcher,
-  isExpectCall,
   isInstanceOfBinaryExpression,
   isParsedInstanceOfMatcherCall,
   isSupportedAccessor,
-  parseExpectCall,
+  parseJestFnCall,
 } from './utils';
 
 const isArrayIsArrayCall = (
@@ -42,25 +41,21 @@ export default createRule<Options, MessageIds>({
   create(context) {
     return {
       CallExpression(node) {
-        if (!isExpectCall(node)) {
+        const jestFnCall = parseJestFnCall(node, context);
+
+        if (jestFnCall?.type !== 'expect') {
           return;
         }
 
-        const { expect, modifier, matcher } = parseExpectCall(node);
-
-        if (!matcher) {
-          return;
-        }
-
-        if (isParsedInstanceOfMatcherCall(matcher, 'Array')) {
+        if (isParsedInstanceOfMatcherCall(jestFnCall, 'Array')) {
           context.report({
-            node: matcher.node.property,
+            node: jestFnCall.matcher,
             messageId: 'preferToBeArray',
             fix: fixer => [
               fixer.replaceTextRange(
                 [
-                  matcher.node.property.range[0],
-                  matcher.node.property.range[1] + '(Array)'.length,
+                  jestFnCall.matcher.range[0],
+                  jestFnCall.matcher.range[1] + '(Array)'.length,
                 ],
                 'toBeArray()',
               ),
@@ -70,11 +65,17 @@ export default createRule<Options, MessageIds>({
           return;
         }
 
+        const { parent: expect } = jestFnCall.head.node;
+
+        if (expect?.type !== AST_NODE_TYPES.CallExpression) {
+          return;
+        }
+
         const [expectArg] = expect.arguments;
 
         if (
           !expectArg ||
-          !isBooleanEqualityMatcher(matcher) ||
+          !isBooleanEqualityMatcher(jestFnCall) ||
           !(
             isArrayIsArrayCall(expectArg) ||
             isInstanceOfBinaryExpression(expectArg, 'Array')
@@ -84,11 +85,11 @@ export default createRule<Options, MessageIds>({
         }
 
         context.report({
-          node: matcher.node.property,
+          node: jestFnCall.matcher,
           messageId: 'preferToBeArray',
           fix(fixer) {
             const fixes = [
-              fixer.replaceText(matcher.node.property, 'toBeArray'),
+              fixer.replaceText(jestFnCall.matcher, 'toBeArray'),
               expectArg.type === AST_NODE_TYPES.CallExpression
                 ? fixer.remove(expectArg.callee)
                 : fixer.removeRange([
@@ -97,10 +98,11 @@ export default createRule<Options, MessageIds>({
                   ]),
             ];
 
-            let invertCondition = matcher.name === 'toBeFalse';
+            let invertCondition =
+              getAccessorValue(jestFnCall.matcher) === 'toBeFalse';
 
-            if (matcher.arguments?.length) {
-              const [matcherArg] = matcher.arguments;
+            if (jestFnCall.args.length) {
+              const [matcherArg] = jestFnCall.args;
 
               fixes.push(fixer.remove(matcherArg));
 
@@ -111,13 +113,17 @@ export default createRule<Options, MessageIds>({
             }
 
             if (invertCondition) {
+              const notModifier = jestFnCall.modifiers.find(
+                nod => getAccessorValue(nod) === 'not',
+              );
+
               fixes.push(
-                modifier && modifier.name === ModifierName.not
+                notModifier
                   ? fixer.removeRange([
-                      modifier.node.property.range[0] - 1,
-                      modifier.node.property.range[1],
+                      notModifier.range[0] - 1,
+                      notModifier.range[1],
                     ])
-                  : fixer.insertTextBefore(matcher.node.property, 'not.'),
+                  : fixer.insertTextBefore(jestFnCall.matcher, 'not.'),
               );
             }
 

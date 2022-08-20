@@ -50,6 +50,8 @@ const createTestsForEqualityMatchers = (): Array<
 
 ruleTester.run('prefer-to-be-array', rule, {
   valid: [
+    'expect.hasAssertions',
+    'expect.hasAssertions()',
     'expect',
     'expect()',
     'expect().toBe(true)',

@@ -1,22 +1,10 @@
-import { AST_NODE_TYPES, TSESTree } from '@typescript-eslint/utils';
+import { AST_NODE_TYPES } from '@typescript-eslint/utils';
 import {
   createRule,
-  followTypeAssertionChain,
-  isExpectCall,
-  parseExpectCall,
+  getAccessorValue,
+  getFirstMatcherArg,
+  parseJestFnCall,
 } from './utils';
-
-const isNumberOne = (
-  firstArg: TSESTree.CallExpression['arguments'][number],
-): boolean => {
-  if (firstArg.type === AST_NODE_TYPES.SpreadElement) {
-    return false;
-  }
-
-  const arg = followTypeAssertionChain(firstArg);
-
-  return arg.type === AST_NODE_TYPES.Literal && arg.value === 1;
-};
 
 export default createRule({
   name: __filename,
@@ -37,29 +25,28 @@ export default createRule({
   create(context) {
     return {
       CallExpression(node) {
-        if (!isExpectCall(node)) {
+        const jestFnCall = parseJestFnCall(node, context);
+
+        if (jestFnCall?.type !== 'expect') {
           return;
         }
 
-        const { matcher } = parseExpectCall(node);
-
         if (
-          matcher &&
-          matcher.name === 'toHaveBeenCalledTimes' &&
-          matcher.arguments?.length === 1
+          getAccessorValue(jestFnCall.matcher) === 'toHaveBeenCalledTimes' &&
+          jestFnCall.args.length === 1
         ) {
-          const [arg] = matcher.arguments;
+          const arg = getFirstMatcherArg(jestFnCall);
 
-          if (!isNumberOne(arg)) {
+          if (arg.type !== AST_NODE_TYPES.Literal || arg.value !== 1) {
             return;
           }
 
           context.report({
-            node: matcher.node.property,
+            node: jestFnCall.matcher,
             messageId: 'preferCalledOnce',
             fix: fixer => [
-              fixer.replaceText(matcher.node.property, 'toHaveBeenCalledOnce'),
-              fixer.remove(arg),
+              fixer.replaceText(jestFnCall.matcher, 'toHaveBeenCalledOnce'),
+              fixer.remove(jestFnCall.args[0]),
             ],
           });
         }
