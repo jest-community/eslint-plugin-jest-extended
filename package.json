@@ -86,6 +86,16 @@
           "<rootDir>/lib/.*",
           "<rootDir>/src/rules/__tests__/test-utils.ts"
         ]
+      },
+      {
+        "displayName": "lint",
+        "runner": "jest-runner-eslint",
+        "testMatch": [
+          "<rootDir>/**/*.{js,ts}"
+        ],
+        "testPathIgnorePatterns": [
+          "<rootDir>/lib/.*"
+        ]
       }
     ]
   },
