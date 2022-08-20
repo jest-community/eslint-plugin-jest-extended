@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v1.0.0...v1.1.0) (2022-08-20)
+
+
+### Features
+
+* create `prefer-to-have-been-called-once` rule ([#19](https://github.com/jest-community/eslint-plugin-jest-extended/issues/19)) ([12e6372](https://github.com/jest-community/eslint-plugin-jest-extended/commit/12e6372ec54df6d768254bd528a970163a9fbc63))
+
 # 1.0.0 (2022-08-15)
 
 
