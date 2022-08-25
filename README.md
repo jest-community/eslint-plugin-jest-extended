@@ -9,8 +9,7 @@
   <p>ESLint plugin for <a href="https://github.com/jest-community/jest-extended">Jest Extended</a></p>
 </div>
 
-[![Actions Status](https://github.com/jest-community/eslint-plugin-jest-extended/workflows/Unit%20tests/badge.svg?branch=master)](https://github.com/jest-community/eslint-plugin-jest-extended/actions)
-[![Renovate badge](https://badges.renovateapi.com/github/jest-community/eslint-plugin-jest-extended)](https://renovatebot.com/)
+[![Actions Status](https://github.com/jest-community/eslint-plugin-jest-extended/workflows/Unit%20tests%20%26%20Release/badge.svg?branch=main)](https://github.com/jest-community/eslint-plugin-jest-extended/actions)
 
 ## Installation
 
