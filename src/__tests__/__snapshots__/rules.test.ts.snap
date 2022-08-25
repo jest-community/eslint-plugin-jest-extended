@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`rules should export configs that refer to actual rules 1`] = `
-Object {
-  "all": Object {
-    "plugins": Array [
+{
+  "all": {
+    "plugins": [
       "jest-extended",
     ],
-    "rules": Object {
+    "rules": {
       "jest-extended/prefer-to-be-array": "error",
       "jest-extended/prefer-to-be-false": "error",
       "jest-extended/prefer-to-be-object": "error",
@@ -14,11 +14,11 @@ Object {
       "jest-extended/prefer-to-have-been-called-once": "error",
     },
   },
-  "recommended": Object {
-    "plugins": Array [
+  "recommended": {
+    "plugins": [
       "jest-extended",
     ],
-    "rules": Object {},
+    "rules": {},
   },
 }
 `;
