@@ -1,3 +1,17 @@
+# [2.0.0](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v1.2.0...v2.0.0) (2022-08-25)
+
+
+### Features
+
+* drop support for `eslint@6` ([#26](https://github.com/jest-community/eslint-plugin-jest-extended/issues/26)) ([d3d40f3](https://github.com/jest-community/eslint-plugin-jest-extended/commit/d3d40f30266b00bf7182adcd90f52f3ccd1859ba))
+* drop support for Node versions 12 and 17 ([#25](https://github.com/jest-community/eslint-plugin-jest-extended/issues/25)) ([14c90ed](https://github.com/jest-community/eslint-plugin-jest-extended/commit/14c90edffc359db59b1492fa9a94e361b6959f28))
+
+
+### BREAKING CHANGES
+
+* Support for ESLint version 6 is removed
+* Node versions 12 and 17 are no longer supported
+
 # [1.2.0](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v1.1.0...v1.2.0) (2022-08-20)
 
 
