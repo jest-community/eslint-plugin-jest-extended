@@ -1,5 +1,10 @@
 # Suggest using `toBeArray()` (`prefer-to-be-array`)
 
+🔧 This rule is automatically fixable by the
+[`--fix` CLI option](https://eslint.org/docs/latest/user-guide/command-line-interface#--fix).
+
+<!-- end auto-generated rule header -->
+
 For expecting a value to be an array, `jest-extended` provides the `toBeArray`
 matcher.
 

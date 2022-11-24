@@ -1,5 +1,10 @@
 # Suggest using `toBeFalse()` (`prefer-to-be-false`)
 
+🔧 This rule is automatically fixable by the
+[`--fix` CLI option](https://eslint.org/docs/latest/user-guide/command-line-interface#--fix).
+
+<!-- end auto-generated rule header -->
+
 For expecting a value to be `false`, `jest-extended` provides the `toBeFalse`
 matcher.
 

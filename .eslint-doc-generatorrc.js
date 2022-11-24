@@ -1,0 +1,23 @@
+const { format } = require('prettier');
+const { prettier: prettierRC } = require('./package.json');
+
+/** @type {import('eslint-doc-generator').GenerateOptions} */
+const config = {
+  ignoreConfig: ['all'],
+  ruleDocTitleFormat: 'desc-parens-name',
+  ruleDocSectionInclude: ['Rule details'],
+  ruleListColumns: [
+    'name',
+    'description',
+    'configsError',
+    'configsWarn',
+    'configsOff',
+    'fixable',
+    'hasSuggestions',
+    'deprecated',
+  ],
+  urlConfigs: `https://github.com/jest-community/eslint-plugin-jest-extended/blob/main/README.md#shareable-configurations`,
+  postprocess: doc => format(doc, { ...prettierRC, parser: 'markdown' }),
+};
+
+module.exports = config;

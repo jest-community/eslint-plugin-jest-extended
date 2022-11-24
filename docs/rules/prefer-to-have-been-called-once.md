@@ -1,5 +1,10 @@
 # Suggest using `toHaveBeenCalledOnce()` (`prefer-to-have-been-called-once`)
 
+🔧 This rule is automatically fixable by the
+[`--fix` CLI option](https://eslint.org/docs/latest/user-guide/command-line-interface#--fix).
+
+<!-- end auto-generated rule header -->
+
 For expecting a mock or spy to have been called once, `jest-extended` provides
 the `toHaveBeenCalledOnce` matcher.
 
