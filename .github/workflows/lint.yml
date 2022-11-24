@@ -1,6 +1,9 @@
 name: Lint
 on: [pull_request]
 
+permissions:
+  contents: read # to fetch code (actions/checkout)
+
 jobs:
   commitlint:
     runs-on: ubuntu-latest
@@ -8,15 +11,22 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          persist-credentials: false
       - uses: wagoid/commitlint-github-action@v5
         with:
           configFile: './package.json'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   danger:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+      issues: write # to create comment
+      pull-requests: write # to create comment
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
       - name: Danger
         uses: danger/danger-js@11.2.0
         env:
