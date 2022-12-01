@@ -34,7 +34,7 @@
     "prettier:write": "prettier --write .",
     "postpublish": "pinst --enable",
     "test": "jest",
-    "tools:regenerate-docs": "ts-node -T tools/regenerate-docs",
+    "tools:regenerate-docs": "yarn prepack && eslint-doc-generator",
     "typecheck": "tsc -p ."
   },
   "commitlint": {
@@ -127,6 +127,7 @@
     "dedent": "^0.7.0",
     "eslint": "^6.0.0 || ^7.0.0 || ^8.0.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-doc-generator": "^1.0.0",
     "eslint-plugin-eslint-comments": "^3.1.2",
     "eslint-plugin-eslint-plugin": "^5.0.6",
     "eslint-plugin-import": "^2.18.0",

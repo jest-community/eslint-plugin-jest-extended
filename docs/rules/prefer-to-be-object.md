@@ -1,5 +1,10 @@
 # Suggest using `toBeObject()` (`prefer-to-be-object`)
 
+🔧 This rule is automatically fixable by the
+[`--fix` CLI option](https://eslint.org/docs/latest/user-guide/command-line-interface#--fix).
+
+<!-- end auto-generated rule header -->
+
 For expecting a value to be an object, `jest-extended` provides the `toBeObject`
 matcher.
 

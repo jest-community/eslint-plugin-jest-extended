@@ -66,17 +66,20 @@ for installations requiring long-term consistency.
 
 ## Rules
 
-<!-- begin base rules list -->
+<!-- begin auto-generated rules list -->
 
-| Rule                                                                             | Description                            | Fixable      |
-| -------------------------------------------------------------------------------- | -------------------------------------- | ------------ |
-| [prefer-to-be-array](docs/rules/prefer-to-be-array.md)                           | Suggest using `toBeArray()`            | ![fixable][] |
-| [prefer-to-be-false](docs/rules/prefer-to-be-false.md)                           | Suggest using `toBeFalse()`            | ![fixable][] |
-| [prefer-to-be-object](docs/rules/prefer-to-be-object.md)                         | Suggest using `toBeObject()`           | ![fixable][] |
-| [prefer-to-be-true](docs/rules/prefer-to-be-true.md)                             | Suggest using `toBeTrue()`             | ![fixable][] |
-| [prefer-to-have-been-called-once](docs/rules/prefer-to-have-been-called-once.md) | Suggest using `toHaveBeenCalledOnce()` | ![fixable][] |
+🔧 Automatically fixable by the
+[`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).
 
-<!-- end base rules list -->
+| Name                                                                             | Description                            | 🔧  |
+| :------------------------------------------------------------------------------- | :------------------------------------- | :-- |
+| [prefer-to-be-array](docs/rules/prefer-to-be-array.md)                           | Suggest using `toBeArray()`            | 🔧  |
+| [prefer-to-be-false](docs/rules/prefer-to-be-false.md)                           | Suggest using `toBeFalse()`            | 🔧  |
+| [prefer-to-be-object](docs/rules/prefer-to-be-object.md)                         | Suggest using `toBeObject()`           | 🔧  |
+| [prefer-to-be-true](docs/rules/prefer-to-be-true.md)                             | Suggest using `toBeTrue()`             | 🔧  |
+| [prefer-to-have-been-called-once](docs/rules/prefer-to-have-been-called-once.md) | Suggest using `toHaveBeenCalledOnce()` | 🔧  |
+
+<!-- end auto-generated rules list -->
 
 ## Credit
 
