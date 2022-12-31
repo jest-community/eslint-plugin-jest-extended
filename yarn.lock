@@ -4652,7 +4652,7 @@ __metadata:
     eslint-plugin-node: ^11.0.0
     eslint-plugin-prettier: ^4.2.1
     eslint-remote-tester: ^3.0.0
-    eslint-remote-tester-repositories: ^0.0.7
+    eslint-remote-tester-repositories: ^0.0.8
     husky: ^8.0.1
     is-ci: ^3.0.0
     jest: ^29.0.0
@@ -4702,10 +4702,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-remote-tester-repositories@npm:^0.0.7":
-  version: 0.0.7
-  resolution: "eslint-remote-tester-repositories@npm:0.0.7"
-  checksum: 6e752bc722713729b9cd94afd20ef33f2ae65ccf64ae147e4cbfd6aa5fe14dcd50ab2ade022323952c66665d4071a8bb8556a97a0ec8be5b9434db663c6d87a4
+"eslint-remote-tester-repositories@npm:^0.0.8":
+  version: 0.0.8
+  resolution: "eslint-remote-tester-repositories@npm:0.0.8"
+  checksum: 6379bcee4a7e9b305b2b6eb73b73b93c9ac7aa5a22d6edb8e37ada65d6d83417e50eaf1c4446f8c114bdaf4de9cadc7de5a22f9bb50fbc4c4476171fe1161380
   languageName: node
   linkType: hard
 
