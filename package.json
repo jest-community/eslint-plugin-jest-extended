@@ -144,7 +144,7 @@
     "pinst": "^3.0.0",
     "prettier": "^2.7.0",
     "rimraf": "^3.0.0",
-    "semantic-release": "^20.0.0",
+    "semantic-release": "^21.0.0",
     "semver": "^7.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.0"
