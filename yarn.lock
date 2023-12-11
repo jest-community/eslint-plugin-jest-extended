@@ -5076,14 +5076,14 @@ __metadata:
   linkType: hard
 
 "eslint-plugin-eslint-plugin@npm:^5.0.6":
-  version: 5.1.1
-  resolution: "eslint-plugin-eslint-plugin@npm:5.1.1"
+  version: 5.2.0
+  resolution: "eslint-plugin-eslint-plugin@npm:5.2.0"
   dependencies:
     eslint-utils: ^3.0.0
     estraverse: ^5.3.0
   peerDependencies:
     eslint: ">=7.0.0"
-  checksum: a76e66708d8b79f4703a0722d7ed5e53af978c588fb60fe47936a32b377c08e3b2cf92f51180414d70be02d66f7fef0a3dad65d2e7b27873f24292e6923b7aee
+  checksum: 3ec50fa3a1744bd02417795ad795a691294d5680063d273136b36b1726fc7423c4a90ff439de72c9748f44d799456a44d9e103c9c8222486c81ec1330291968a
   languageName: node
   linkType: hard
 
