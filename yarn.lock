@@ -5038,7 +5038,7 @@ __metadata:
     eslint-plugin-prettier: ^5.0.0
     eslint-remote-tester: ^3.0.0
     eslint-remote-tester-repositories: ^1.0.0
-    husky: ^8.0.1
+    husky: ^9.0.0
     is-ci: ^3.0.0
     jest: ^29.0.0
     jest-runner-eslint: ^2.0.0
@@ -6180,12 +6180,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^8.0.1":
-  version: 8.0.3
-  resolution: "husky@npm:8.0.3"
+"husky@npm:^9.0.0":
+  version: 9.0.5
+  resolution: "husky@npm:9.0.5"
   bin:
-    husky: lib/bin.js
-  checksum: 837bc7e4413e58c1f2946d38fb050f5d7324c6f16b0fd66411ffce5703b294bd21429e8ba58711cd331951ee86ed529c5be4f76805959ff668a337dbfa82a1b0
+    husky: bin.js
+  checksum: 0f9c88867adca36efe01e1fc90ffa89234d57568935dde073b8b12e64f484e1cf3fe7183ef6ed5978fc8aa063e3607de7a6691b33aa7ff7d041516f9e34c546c
   languageName: node
   linkType: hard
 
