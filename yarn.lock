@@ -5107,15 +5107,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-es@npm:^3.0.0":
-  version: 3.0.1
-  resolution: "eslint-plugin-es@npm:3.0.1"
+"eslint-plugin-es@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "eslint-plugin-es@npm:4.1.0"
   dependencies:
     eslint-utils: ^2.0.0
     regexpp: ^3.0.0
   peerDependencies:
     eslint: ">=4.19.1"
-  checksum: e57592c52301ee8ddc296ae44216df007f3a870bcb3be8d1fbdb909a1d3a3efe3fa3785de02066f9eba1d6466b722d3eb3cc3f8b75b3cf6a1cbded31ac6298e4
+  checksum: 26b87a216d3625612b1d3ca8653ac8a1d261046d2a973bb0eb2759070267d2bfb0509051facdeb5ae03dc8dfb51a434be23aff7309a752ca901d637da535677f
   languageName: node
   linkType: hard
 
@@ -5199,7 +5199,7 @@ __metadata:
     eslint-plugin-eslint-comments: ^3.1.2
     eslint-plugin-eslint-plugin: ^5.0.6
     eslint-plugin-import: ^2.18.0
-    eslint-plugin-node: ^11.0.0
+    eslint-plugin-n: ^14.0.0
     eslint-plugin-prettier: ^5.0.0
     eslint-remote-tester: ^3.0.0
     eslint-remote-tester-repositories: ^1.0.0
@@ -5221,19 +5221,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"eslint-plugin-node@npm:^11.0.0":
-  version: 11.1.0
-  resolution: "eslint-plugin-node@npm:11.1.0"
+"eslint-plugin-n@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "eslint-plugin-n@npm:14.0.0"
   dependencies:
-    eslint-plugin-es: ^3.0.0
-    eslint-utils: ^2.0.0
+    eslint-plugin-es: ^4.1.0
+    eslint-utils: ^3.0.0
     ignore: ^5.1.1
+    is-core-module: ^2.3.0
     minimatch: ^3.0.4
     resolve: ^1.10.1
     semver: ^6.1.0
   peerDependencies:
-    eslint: ">=5.16.0"
-  checksum: 5804c4f8a6e721f183ef31d46fbe3b4e1265832f352810060e0502aeac7de034df83352fc88643b19641bb2163f2587f1bd4119aff0fd21e8d98c57c450e013b
+    eslint: ">=7.0.0"
+  checksum: 7ca939e99a56fafe9022693b6386f5cf6d55cbd4469eb5b2197e88ad6a5babc0ba29cd10718dbcd85165d19e3b7f700bfaa73130d024eb966b01825f53d889aa
   languageName: node
   linkType: hard
 
@@ -6661,7 +6662,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-core-module@npm:^2.13.0, is-core-module@npm:^2.13.1, is-core-module@npm:^2.5.0, is-core-module@npm:^2.8.1":
+"is-core-module@npm:^2.13.0, is-core-module@npm:^2.13.1, is-core-module@npm:^2.3.0, is-core-module@npm:^2.5.0, is-core-module@npm:^2.8.1":
   version: 2.13.1
   resolution: "is-core-module@npm:2.13.1"
   dependencies:
