@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v2.0.0...v2.0.1) (2024-04-19)
+
+
+### Performance Improvements
+
+* don't collect more info than needed when resolving jest functions ([#172](https://github.com/jest-community/eslint-plugin-jest-extended/issues/172)) ([08e130c](https://github.com/jest-community/eslint-plugin-jest-extended/commit/08e130c79df9e81e6b4c9c0e0f8b52885ee20ada))
+
 # [2.0.0](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v1.2.0...v2.0.0) (2022-08-25)
 
 
