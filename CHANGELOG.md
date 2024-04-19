@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v2.0.2...v2.0.3) (2024-04-19)
+
+
+### Bug Fixes
+
+* replace use of deprecated methods ([#178](https://github.com/jest-community/eslint-plugin-jest-extended/issues/178)) ([31c01ea](https://github.com/jest-community/eslint-plugin-jest-extended/commit/31c01ea02f4b8dbdf7e103efbde5aa9bd03fbfb2))
+
 ## [2.0.2](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v2.0.1...v2.0.2) (2024-04-19)
 
 
