@@ -432,7 +432,7 @@ const findImportSourceNode = (
 ): TSESTree.Node | null => {
   if (node.type === AST_NODE_TYPES.AwaitExpression) {
     if (node.argument.type === AST_NODE_TYPES.ImportExpression) {
-      return (node.argument as TSESTree.ImportExpression).source;
+      return node.argument.source;
     }
 
     return null;
@@ -499,15 +499,16 @@ const describePossibleImportDef = (def: TSESLint.Scope.Definition) => {
   return null;
 };
 
-const resolveScope = (scope: TSESLint.Scope.Scope, identifier: string) => {
+const resolveScope = (
+  scope: TSESLint.Scope.Scope,
+  identifier: string,
+): ImportDetails | 'local' | null => {
   let currentScope: TSESLint.Scope.Scope | null = scope;
 
   while (currentScope !== null) {
-    for (const ref of currentScope.variables) {
-      if (ref.defs.length === 0) {
-        continue;
-      }
+    const ref = currentScope.set.get(identifier);
 
+    if (ref && ref.defs.length > 0) {
       const def = ref.defs[ref.defs.length - 1];
 
       const importDetails = describePossibleImportDef(def);
@@ -516,9 +517,7 @@ const resolveScope = (scope: TSESLint.Scope.Scope, identifier: string) => {
         return importDetails;
       }
 
-      if (ref.name === identifier) {
-        return 'local';
-      }
+      return 'local';
     }
 
     currentScope = currentScope.upper;
