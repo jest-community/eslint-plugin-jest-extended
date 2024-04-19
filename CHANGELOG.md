@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v2.0.3...v2.1.0) (2024-04-19)
+
+
+### Features
+
+* support `failing.each` ([#179](https://github.com/jest-community/eslint-plugin-jest-extended/issues/179)) ([b2adda4](https://github.com/jest-community/eslint-plugin-jest-extended/commit/b2adda4cacf1616ce18bed4d655a8a5b533c6664))
+
 ## [2.0.3](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v2.0.2...v2.0.3) (2024-04-19)
 
 
