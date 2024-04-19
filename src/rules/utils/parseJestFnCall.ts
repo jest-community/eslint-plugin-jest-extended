@@ -1,9 +1,13 @@
-import { AST_NODE_TYPES, TSESLint, TSESTree } from '@typescript-eslint/utils';
 import {
-  AccessorNode,
+  AST_NODE_TYPES,
+  type TSESLint,
+  type TSESTree,
+} from '@typescript-eslint/utils';
+import {
+  type AccessorNode,
   DescribeAlias,
   HookName,
-  KnownMemberExpression,
+  type KnownMemberExpression,
   ModifierName,
   TestCaseName,
   findTopMostCallExpression,
@@ -238,7 +242,7 @@ const parseJestFnCallWithReasonInner = (
     return null;
   }
 
-  const resolved = resolveToJestFn(context, getAccessorValue(first));
+  const resolved = resolveToJestFn(context, first);
 
   // we're not a jest function
   if (!resolved) {
@@ -534,9 +538,10 @@ interface ResolvedJestFn {
 
 const resolveToJestFn = (
   context: TSESLint.RuleContext<string, unknown[]>,
-  identifier: string,
+  accessor: AccessorNode,
 ): ResolvedJestFn | null => {
-  const maybeImport = resolveScope(context.getScope(), identifier);
+  const identifier = getAccessorValue(accessor);
+  const maybeImport = resolveScope(getScope(context, accessor), identifier);
 
   // the identifier was found as a local variable or function declaration
   // meaning it's not a function from jest
@@ -563,4 +568,21 @@ const resolveToJestFn = (
     local: identifier,
     type: 'global',
   };
+};
+
+/* istanbul ignore next */
+const getScope = (
+  context: TSESLint.RuleContext<string, unknown[]>,
+  node: TSESTree.Node,
+) => {
+  const sourceCode =
+    'sourceCode' in context
+      ? (context.sourceCode as TSESLint.SourceCode)
+      : context.getSourceCode();
+
+  if ('getScope' in sourceCode) {
+    return sourceCode.getScope(node);
+  }
+
+  return context.getScope();
 };

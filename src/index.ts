@@ -1,6 +1,6 @@
 import { readdirSync } from 'fs';
 import { join, parse } from 'path';
-import { TSESLint } from '@typescript-eslint/utils';
+import { TSESLint, TSESTree } from '@typescript-eslint/utils';
 
 type RuleModule = TSESLint.RuleModule<string, unknown[]> & {
   meta: Required<Pick<TSESLint.RuleMetaData<string>, 'docs'>>;
@@ -10,6 +10,17 @@ type RuleModule = TSESLint.RuleModule<string, unknown[]> & {
 declare module '@typescript-eslint/utils/dist/ts-eslint/Rule' {
   export interface RuleMetaDataDocs {
     category: 'Best Practices' | 'Possible Errors' | 'Stylistic Issues';
+  }
+}
+
+declare module '@typescript-eslint/utils/dist/ts-eslint/SourceCode' {
+  export interface SourceCode {
+    /**
+     * Returns the scope of the given node.
+     * This information can be used track references to variables.
+     * @since 8.37.0
+     */
+    getScope(node: TSESTree.Node): TSESLint.Scope.Scope;
   }
 }
 
