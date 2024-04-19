@@ -4,9 +4,21 @@
     "moduleResolution": "node",
     "module": "commonjs",
     "noEmit": true,
+    "stripInternal": true,
+
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitOverride": true,
     "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "strict": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "skipLibCheck": true, // until we can upgrade @typescript-eslint
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*"]
 }
