@@ -5,14 +5,14 @@ module.exports = {
   extends: [
     'plugin:eslint-plugin/recommended',
     'plugin:eslint-comments/recommended',
-    'plugin:node/recommended',
+    'plugin:n/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:prettier/recommended',
   ],
   plugins: [
     'eslint-plugin',
     'eslint-comments',
-    'node',
+    'n',
     'import',
     '@typescript-eslint',
   ],
@@ -44,9 +44,9 @@ module.exports = {
     'sort-imports': ['error', { ignoreDeclarationSort: true }],
     'require-unicode-regexp': 'error',
     // TS covers this
-    'node/no-missing-import': 'off',
-    'node/no-unsupported-features/es-syntax': 'off',
-    'node/no-unsupported-features/es-builtins': 'error',
+    'n/no-missing-import': 'off',
+    'n/no-unsupported-features/es-syntax': 'off',
+    'n/no-unsupported-features/es-builtins': 'error',
     'import/no-commonjs': 'error',
     'import/no-duplicates': 'error',
     'import/no-extraneous-dependencies': 'error',
@@ -89,7 +89,7 @@ module.exports = {
     {
       files: ['tools/*'],
       rules: {
-        'node/shebang': 'off',
+        'n/shebang': 'off',
       },
     },
     {
