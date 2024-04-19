@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v2.0.1...v2.0.2) (2024-04-19)
+
+
+### Performance Improvements
+
+* use `Set` instead of iterating, and deduplicate a function ([#175](https://github.com/jest-community/eslint-plugin-jest-extended/issues/175)) ([d0652cd](https://github.com/jest-community/eslint-plugin-jest-extended/commit/d0652cdb82b692cdee0f2ef4616b96e89c6d4ddf))
+
 ## [2.0.1](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v2.0.0...v2.0.1) (2024-04-19)
 
 
