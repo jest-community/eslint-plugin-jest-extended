@@ -2720,17 +2720,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/node12@npm:^12.0.0":
-  version: 12.1.3
-  resolution: "@tsconfig/node12@npm:12.1.3"
-  checksum: 139daeaf3c7f18adc320181f7d57046424cd321582d30d387340479f0111b33173c8ce4b16fc6221d6912c0488eb21dde706cf3b0f91c72943180a13cfc30323
-  languageName: node
-  linkType: hard
-
 "@tsconfig/node14@npm:^1.0.0":
   version: 1.0.3
   resolution: "@tsconfig/node14@npm:1.0.3"
   checksum: 19275fe80c4c8d0ad0abed6a96dbf00642e88b220b090418609c4376e1cef81bf16237bf170ad1b341452feddb8115d8dd2e5acdfdea1b27422071163dc9ba9d
+  languageName: node
+  linkType: hard
+
+"@tsconfig/node14@npm:^14.0.0":
+  version: 14.1.2
+  resolution: "@tsconfig/node14@npm:14.1.2"
+  checksum: f5934cebc6c8790b28a145d8abbafcb0bd23a405ebcb790bd9f524a2750757d5675b418583bddaed760894a18a0a59a8cbfec1979c90e388d7ad784a9519193f
   languageName: node
   linkType: hard
 
@@ -5055,7 +5055,7 @@ __metadata:
     "@schemastore/package": ^0.0.10
     "@semantic-release/changelog": ^6.0.0
     "@semantic-release/git": ^10.0.0
-    "@tsconfig/node12": ^12.0.0
+    "@tsconfig/node14": ^14.0.0
     "@types/dedent": ^0.7.0
     "@types/jest": ^29.0.0
     "@types/node": ^14.17.0

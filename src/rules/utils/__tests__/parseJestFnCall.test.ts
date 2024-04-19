@@ -76,7 +76,7 @@ const rule = createRule({
           messageId: 'details',
           node,
           data: {
-            data: JSON.stringify(sorted, (key, value) => {
+            data: JSON.stringify(sorted, (_key, value) => {
               if (isNode(value)) {
                 if (isSupportedAccessor(value)) {
                   return getAccessorValue(value);
