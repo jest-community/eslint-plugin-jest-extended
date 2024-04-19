@@ -26,7 +26,7 @@
   ],
   "scripts": {
     "build": "babel --extensions .js,.ts src --out-dir lib --copy-files && rimraf --glob lib/__tests__ 'lib/**/__tests__'",
-    "postinstall": "is-ci || husky install",
+    "postinstall": "is-ci || husky",
     "lint": "eslint . --ignore-pattern '!.eslintrc.js' --ext js,ts",
     "prepack": "rimraf --glob lib && yarn build",
     "prepublishOnly": "pinst --disable",
