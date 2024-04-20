@@ -1,6 +1,10 @@
 import { readdirSync } from 'fs';
 import { join, parse } from 'path';
 import { TSESLint, TSESTree } from '@typescript-eslint/utils';
+import {
+  name as packageName,
+  version as packageVersion,
+} from '../package.json';
 
 type RuleModule = TSESLint.RuleModule<string, unknown[]> & {
   meta: Required<Pick<TSESLint.RuleMetaData<string>, 'docs'>>;
@@ -68,15 +72,34 @@ const allRules = Object.entries(rules)
     {},
   );
 
-const createConfig = (rules: Record<string, TSESLint.Linter.RuleLevel>) => ({
+const plugin = {
+  meta: { name: packageName, version: packageVersion },
+  // ugly cast for now to keep TypeScript happy since
+  // we don't have types for flat config yet
+  configs: {} as Record<
+    'all' | 'recommended' | 'flat/all' | 'flat/recommended',
+    Pick<Required<TSESLint.Linter.Config>, 'rules'>
+  >,
+  rules,
+};
+
+const createRCConfig = (rules: Record<string, TSESLint.Linter.RuleLevel>) => ({
   plugins: ['jest-extended'],
   rules,
 });
 
-export = {
-  configs: {
-    all: createConfig(allRules),
-    recommended: createConfig(recommendedRules),
-  },
+const createFlatConfig = (
+  rules: Record<string, TSESLint.Linter.RuleLevel>,
+) => ({
+  plugins: { 'jest-extended': plugin },
   rules,
+});
+
+plugin.configs = {
+  all: createRCConfig(allRules),
+  recommended: createRCConfig(recommendedRules),
+  'flat/all': createFlatConfig(allRules),
+  'flat/recommended': createFlatConfig(recommendedRules),
 };
+
+export = plugin;
