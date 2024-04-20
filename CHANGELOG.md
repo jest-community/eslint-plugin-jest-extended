@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v2.2.0...v2.3.0) (2024-04-20)
+
+
+### Features
+
+* add should-be-fine support for flat configs ([#181](https://github.com/jest-community/eslint-plugin-jest-extended/issues/181)) ([7d106b0](https://github.com/jest-community/eslint-plugin-jest-extended/commit/7d106b0fc8eb99946ba760bd9f4feccc8fb6e18e))
+
 # [2.2.0](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v2.1.0...v2.2.0) (2024-04-19)
 
 
