@@ -28,8 +28,17 @@ module.exports = {
     '@typescript-eslint/no-require-imports': 'error',
     '@typescript-eslint/ban-ts-comment': 'warn',
     '@typescript-eslint/ban-types': 'error',
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      { disallowTypeAnnotations: false, fixStyle: 'inline-type-imports' },
+    ],
+    '@typescript-eslint/no-import-type-side-effects': 'error',
     '@typescript-eslint/no-unused-vars': 'error',
     'eslint-comments/no-unused-disable': 'error',
+    'eslint-plugin/require-meta-docs-description': [
+      'error',
+      { pattern: '^(Enforce|Require|Disallow|Suggest|Prefer)' },
+    ],
     'eslint-plugin/test-case-property-ordering': 'error',
     'no-else-return': 'error',
     'no-negated-condition': 'error',
@@ -43,8 +52,9 @@ module.exports = {
     ],
     'sort-imports': ['error', { ignoreDeclarationSort: true }],
     'require-unicode-regexp': 'error',
-    // TS covers this
+    // TS covers these 2
     'n/no-missing-import': 'off',
+    'n/no-missing-require': 'off',
     'n/no-unsupported-features/es-syntax': 'off',
     'n/no-unsupported-features/es-builtins': 'error',
     'import/no-commonjs': 'error',
@@ -72,6 +82,7 @@ module.exports = {
     'prefer-rest-params': 'error',
     'prefer-const': ['error', { destructuring: 'all' }],
     'no-var': 'error',
+    curly: 'error',
   },
   overrides: [
     {
