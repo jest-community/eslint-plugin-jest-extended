@@ -1,8 +1,8 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 import rule, { type MessageIds, type Options } from '../prefer-to-be-array';
-import { espreeParser } from './test-utils';
+import { FlatCompatRuleTester as RuleTester, espreeParser } from './test-utils';
 
-const ruleTester = new TSESLint.RuleTester({
+const ruleTester = new RuleTester({
   parser: espreeParser,
   parserOptions: {
     ecmaVersion: 2017,

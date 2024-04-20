@@ -5076,7 +5076,7 @@ __metadata:
     prettier: ^3.0.0
     rimraf: ^5.0.0
     semantic-release: ^23.0.0
-    semver: ^7.0.0
+    semver: ^7.6.0
     ts-node: ^10.9.1
     typescript: ^5.0.0
   peerDependencies:

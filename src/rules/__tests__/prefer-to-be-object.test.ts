@@ -1,7 +1,8 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 import rule, { type MessageIds, type Options } from '../prefer-to-be-object';
+import { FlatCompatRuleTester as RuleTester } from './test-utils';
 
-const ruleTester = new TSESLint.RuleTester();
+const ruleTester = new RuleTester();
 
 // makes ts happy about the dynamic test generation
 const messageId = 'preferToBeObject' as const;
