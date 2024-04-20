@@ -1,7 +1,7 @@
-import { TSESLint } from '@typescript-eslint/utils';
 import rule from '../prefer-to-have-been-called-once';
+import { FlatCompatRuleTester as RuleTester } from './test-utils';
 
-const ruleTester = new TSESLint.RuleTester();
+const ruleTester = new RuleTester();
 
 ruleTester.run('prefer-to-have-been-called-once', rule, {
   valid: [
@@ -38,7 +38,7 @@ ruleTester.run('prefer-to-have-been-called-once', rule, {
   ],
 });
 
-new TSESLint.RuleTester({
+new RuleTester({
   parser: require.resolve('@typescript-eslint/parser'),
 }).run('prefer-to-have-been-called-once: typescript edition', rule, {
   valid: [

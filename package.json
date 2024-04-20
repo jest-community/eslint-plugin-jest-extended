@@ -69,35 +69,6 @@
       "@semantic-release/github"
     ]
   },
-  "jest": {
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    },
-    "projects": [
-      {
-        "displayName": "test",
-        "testPathIgnorePatterns": [
-          "<rootDir>/lib/.*",
-          "<rootDir>/src/rules/__tests__/test-utils.ts"
-        ]
-      },
-      {
-        "displayName": "lint",
-        "runner": "jest-runner-eslint",
-        "testMatch": [
-          "<rootDir>/**/*.{js,ts}"
-        ],
-        "testPathIgnorePatterns": [
-          "<rootDir>/lib/.*"
-        ]
-      }
-    ]
-  },
   "resolutions": {
     "@typescript-eslint/experimental-utils": "^5.0.0"
   },
@@ -123,7 +94,7 @@
     "babel-jest": "^29.0.0",
     "babel-plugin-replace-ts-export-assignment": "^0.0.2",
     "dedent": "^1.0.0",
-    "eslint": "^6.0.0 || ^7.0.0 || ^8.0.0",
+    "eslint": "^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-doc-generator": "^1.0.0",
     "eslint-plugin-eslint-comments": "^3.1.2",
@@ -143,12 +114,12 @@
     "prettier": "^3.0.0",
     "rimraf": "^5.0.0",
     "semantic-release": "^23.0.0",
-    "semver": "^7.0.0",
+    "semver": "^7.6.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.0"
   },
   "peerDependencies": {
-    "eslint": "^7.0.0 || ^8.0.0"
+    "eslint": "^7.0.0 || ^8.0.0 || ^9.0.0"
   },
   "packageManager": "yarn@3.8.1",
   "engines": {

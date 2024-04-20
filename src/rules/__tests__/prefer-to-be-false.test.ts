@@ -1,7 +1,7 @@
-import { TSESLint } from '@typescript-eslint/utils';
 import rule from '../prefer-to-be-false';
+import { FlatCompatRuleTester as RuleTester } from './test-utils';
 
-const ruleTester = new TSESLint.RuleTester();
+const ruleTester = new RuleTester();
 
 ruleTester.run('prefer-to-be-false', rule, {
   valid: [
@@ -58,7 +58,7 @@ ruleTester.run('prefer-to-be-false', rule, {
   ],
 });
 
-new TSESLint.RuleTester({
+new RuleTester({
   parser: require.resolve('@typescript-eslint/parser'),
 }).run('prefer-to-be-false: typescript edition', rule, {
   valid: [

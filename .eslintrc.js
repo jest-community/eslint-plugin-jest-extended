@@ -92,7 +92,7 @@ module.exports = {
       },
     },
     {
-      files: ['src/**/*', 'dangerfile.ts'],
+      files: ['src/**/*', 'dangerfile.ts', './jest.config.ts'],
       parserOptions: {
         sourceType: 'module',
       },
