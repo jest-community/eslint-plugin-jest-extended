@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v2.3.0...v2.4.0) (2024-04-20)
+
+
+### Features
+
+* support ESLint v9 ([#185](https://github.com/jest-community/eslint-plugin-jest-extended/issues/185)) ([42d36b1](https://github.com/jest-community/eslint-plugin-jest-extended/commit/42d36b198d0c6b489636843475e8ebd9ea4e837d))
+
 # [2.3.0](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v2.2.0...v2.3.0) (2024-04-20)
 
 
