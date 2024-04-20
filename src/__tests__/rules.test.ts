@@ -29,15 +29,37 @@ describe('rules', () => {
   });
 
   it('should export configs that refer to actual rules', () => {
+    const expectJestExtendedPlugin = expect.objectContaining({
+      meta: {
+        name: 'eslint-plugin-jest-extended',
+        version: expect.any(String),
+      },
+    });
+
     const recommendedConfigs = plugin.configs;
 
-    expect(recommendedConfigs).toMatchSnapshot();
-    expect(Object.keys(recommendedConfigs)).toEqual(['all', 'recommended']);
+    expect(recommendedConfigs).toMatchSnapshot({
+      'flat/recommended': {
+        plugins: { 'jest-extended': expectJestExtendedPlugin },
+      },
+      'flat/all': {
+        plugins: { 'jest-extended': expectJestExtendedPlugin },
+      },
+    });
+    expect(Object.keys(recommendedConfigs)).toEqual([
+      'all',
+      'recommended',
+      'flat/all',
+      'flat/recommended',
+    ]);
     expect(Object.keys(recommendedConfigs.all.rules)).toHaveLength(
       ruleNames.length,
     );
+    expect(Object.keys(recommendedConfigs['flat/all'].rules)).toHaveLength(
+      ruleNames.length,
+    );
     const allConfigRules = Object.values(recommendedConfigs)
-      .map(config => Object.keys(config.rules))
+      .map(config => Object.keys(config.rules ?? {}))
       .reduce((previousValue, currentValue) => [
         ...previousValue,
         ...currentValue,

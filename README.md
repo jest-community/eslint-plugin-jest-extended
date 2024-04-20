@@ -22,6 +22,15 @@ $ yarn add --dev eslint eslint-plugin-jest-extended
 
 ## Usage
 
+> [!NOTE]
+>
+> `eslint.config.js` is supported, though most of the plugin documentation still
+> currently uses `.eslintrc` syntax.
+>
+> Refer to the
+> [ESLint documentation on the new configuration file format](https://eslint.org/docs/latest/use/configure/configuration-files-new)
+> for more.
+
 Add `jest-extended` to the plugins section of your `.eslintrc` configuration
 file. You can omit the `eslint-plugin-` prefix:
 
@@ -59,6 +68,22 @@ If you want to enable all rules instead of only some you can do so by adding the
 {
   "extends": ["plugin:jest-extended/all"]
 }
+```
+
+To enable this configuration with `eslint.config.js`, use
+`jestExtended.configs['flat/all']`:
+
+```js
+const jestExtended = require('eslint-plugin-jest-extended');
+
+module.exports = [
+  {
+    files: [
+      /* glob matching your test files */
+    ],
+    ...jestExtended.configs['flat/all'],
+  },
+];
 ```
 
 Note that the `all` configuration may change in any release and is thus unsuited
