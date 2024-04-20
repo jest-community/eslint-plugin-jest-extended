@@ -1,6 +1,6 @@
 import { readdirSync } from 'fs';
 import { join, parse } from 'path';
-import { TSESLint, TSESTree } from '@typescript-eslint/utils';
+import type { TSESLint, TSESTree } from '@typescript-eslint/utils';
 import {
   name as packageName,
   version as packageVersion,

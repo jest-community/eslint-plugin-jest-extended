@@ -1,5 +1,5 @@
 import { TSESLint } from '@typescript-eslint/utils';
-import rule, { MessageIds, Options } from '../prefer-to-be-object';
+import rule, { type MessageIds, type Options } from '../prefer-to-be-object';
 
 const ruleTester = new TSESLint.RuleTester();
 
