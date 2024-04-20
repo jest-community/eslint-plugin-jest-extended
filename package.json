@@ -73,7 +73,7 @@
     "@typescript-eslint/experimental-utils": "^5.0.0"
   },
   "dependencies": {
-    "@typescript-eslint/utils": "^5.10.0"
+    "@typescript-eslint/utils": "^7.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -89,8 +89,8 @@
     "@types/dedent": "^0.7.0",
     "@types/jest": "^29.0.0",
     "@types/node": "^14.17.0",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
     "babel-jest": "^29.0.0",
     "babel-plugin-replace-ts-export-assignment": "^0.0.2",
     "dedent": "^1.0.0",
