@@ -2,16 +2,16 @@ import { parse as parsePath } from 'path';
 import {
   AST_NODE_TYPES,
   ESLintUtils,
-  TSESTree,
+  type TSESTree,
 } from '@typescript-eslint/utils';
 import { repository, version } from '../../../package.json';
 import {
-  AccessorNode,
+  type AccessorNode,
   getAccessorValue,
   isSupportedAccessor,
 } from './accessors';
 import { followTypeAssertionChain } from './followTypeAssertionChain';
-import { ParsedExpectFnCall } from './parseJestFnCall';
+import type { ParsedExpectFnCall } from './parseJestFnCall';
 
 export const createRule = ESLintUtils.RuleCreator(name => {
   const ruleName = parsePath(name).name;
