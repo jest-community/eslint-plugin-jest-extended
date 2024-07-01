@@ -2875,19 +2875,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^20.0.0":
   version: 20.14.9
   resolution: "@types/node@npm:20.14.9"
   dependencies:
     undici-types: ~5.26.4
   checksum: 5e9eda1ac8c6cc6bcd1063903ae195eaede9aad1bdad00408a919409cfbcdd2d6535aa3d50346f0d385528f9e03dafc7d1b3bad25aedb1dcd79a6ad39d06c35d
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^14.17.0":
-  version: 14.18.63
-  resolution: "@types/node@npm:14.18.63"
-  checksum: be909061a54931778c71c49dc562586c32f909c4b6197e3d71e6dac726d8bd9fccb9f599c0df99f52742b68153712b5097c0f00cac4e279fa894b0ea6719a8fd
   languageName: node
   linkType: hard
 
@@ -5025,7 +5018,7 @@ __metadata:
     "@tsconfig/node14": ^14.0.0
     "@types/dedent": ^0.7.0
     "@types/jest": ^29.0.0
-    "@types/node": ^14.17.0
+    "@types/node": ^20.0.0
     "@typescript-eslint/eslint-plugin": ^5.0.0
     "@typescript-eslint/parser": ^5.0.0
     "@typescript-eslint/utils": ^5.10.0
