@@ -597,14 +597,7 @@ const getScope = (
   context: TSESLint.RuleContext<string, unknown[]>,
   node: TSESTree.Node,
 ) => {
-  const sourceCode =
-    'sourceCode' in context
-      ? (context.sourceCode as TSESLint.SourceCode)
-      : context.getSourceCode();
+  const sourceCode = context.sourceCode ?? context.getSourceCode();
 
-  if ('getScope' in sourceCode) {
-    return sourceCode.getScope(node);
-  }
-
-  return context.getScope();
+  return sourceCode.getScope?.(node) ?? context.getScope();
 };
