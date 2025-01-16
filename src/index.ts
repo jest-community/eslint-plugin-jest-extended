@@ -10,13 +10,6 @@ type RuleModule = TSESLint.RuleModule<string, unknown[]> & {
   meta: Required<Pick<TSESLint.RuleMetaData<string>, 'docs'>>;
 };
 
-// v5 of `@typescript-eslint/experimental-utils` removed this
-declare module '@typescript-eslint/utils/dist/ts-eslint/Rule' {
-  export interface RuleMetaDataDocs {
-    category: 'Best Practices' | 'Possible Errors' | 'Stylistic Issues';
-  }
-}
-
 declare module '@typescript-eslint/utils/dist/ts-eslint/SourceCode' {
   export interface SourceCode {
     /**
