@@ -10,9 +10,7 @@ export default createRule({
   name: __filename,
   meta: {
     docs: {
-      category: 'Stylistic Issues',
       description: 'Suggest using `toHaveBeenCalledOnce()`',
-      recommended: false,
     },
     messages: {
       preferCalledOnce: 'Prefer `toHaveBeenCalledOnce()`',
