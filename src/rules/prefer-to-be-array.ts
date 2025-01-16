@@ -25,9 +25,7 @@ export default createRule<Options, MessageIds>({
   name: __filename,
   meta: {
     docs: {
-      category: 'Stylistic Issues',
       description: 'Suggest using `toBeArray()`',
-      recommended: false,
     },
     messages: {
       preferToBeArray:

@@ -18,9 +18,7 @@ export default createRule({
   name: __filename,
   meta: {
     docs: {
-      category: 'Stylistic Issues',
       description: 'Suggest using `toBeTrue()`',
-      recommended: false,
     },
     messages: {
       preferToBeTrue: 'Prefer using `toBeTrue()` to test value is `true`.',
