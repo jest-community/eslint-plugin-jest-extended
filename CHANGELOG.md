@@ -1,3 +1,10 @@
+# [3.0.0-next.3](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v3.0.0-next.2...v3.0.0-next.3) (2025-01-16)
+
+
+### Features
+
+* upgrade `@typescript-eslint/utils` to v6 ([#238](https://github.com/jest-community/eslint-plugin-jest-extended/issues/238)) ([3815685](https://github.com/jest-community/eslint-plugin-jest-extended/commit/381568546db6b94fc2a92386556b737f1551e262))
+
 # [3.0.0-next.2](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v3.0.0-next.1...v3.0.0-next.2) (2025-01-16)
 
 
