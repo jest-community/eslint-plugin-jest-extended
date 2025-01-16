@@ -1,3 +1,15 @@
+# [3.0.0-next.2](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v3.0.0-next.1...v3.0.0-next.2) (2025-01-16)
+
+
+### Features
+
+* adjust Node constraints to match `eslint-plugin-jest` ([#235](https://github.com/jest-community/eslint-plugin-jest-extended/issues/235)) ([c9fb39c](https://github.com/jest-community/eslint-plugin-jest-extended/commit/c9fb39caa43e074e64fb9fdb4dbcbdb2822fc57a))
+
+
+### BREAKING CHANGES
+
+* Versions of Node v18 up to 18.11.x are no longer supported
+
 # [3.0.0-next.1](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v2.4.0...v3.0.0-next.1) (2025-01-16)
 
 
