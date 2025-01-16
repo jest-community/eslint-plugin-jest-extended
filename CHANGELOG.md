@@ -1,3 +1,15 @@
+# [3.0.0-next.1](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v2.4.0...v3.0.0-next.1) (2025-01-16)
+
+
+### Features
+
+* drop support for Node v14 ([#232](https://github.com/jest-community/eslint-plugin-jest-extended/issues/232)) ([a3e953f](https://github.com/jest-community/eslint-plugin-jest-extended/commit/a3e953f06572f03777148f903f3e6486034468eb))
+
+
+### BREAKING CHANGES
+
+* drop support for Node v14
+
 # [2.4.0](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v2.3.0...v2.4.0) (2024-04-20)
 
 
