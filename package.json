@@ -70,7 +70,7 @@
     ]
   },
   "dependencies": {
-    "@typescript-eslint/utils": "^6.0.0"
+    "@typescript-eslint/utils": "^6.0.0 || ^7.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",

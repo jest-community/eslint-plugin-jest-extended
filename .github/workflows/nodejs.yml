@@ -66,13 +66,14 @@ jobs:
   test-node:
     name:
       # prettier-ignore
-      Test on Node.js v${{ matrix.node-version }}, eslint v${{ matrix.eslint-version }}
+      Test on Node.js v${{ matrix.node-version }}, eslint v${{ matrix.eslint-version }}, and ts-eslint v${{ matrix.ts-eslint-plugin-version }}
     needs: prepare-yarn-cache-ubuntu
     strategy:
       fail-fast: false
       matrix:
         node-version: [16.x, 18.x, 19.x, 20.x, 21.x]
         eslint-version: [7, 8, 9]
+        ts-eslint-plugin-version: [6, 7]
         exclude:
           # eslint@9 doesn't support node@16
           - node-version: 16.x
@@ -93,7 +94,9 @@ jobs:
           install with eslint v${{ matrix.eslint-version }}
         run: |
           yarn
-          yarn add --dev eslint@${{ matrix.eslint-version }}
+          yarn add @typescript-eslint/utils@${{ matrix.ts-eslint-plugin-version }}
+          # prettier-ignore
+          yarn add --dev eslint@${{ matrix.eslint-version }} @typescript-eslint/eslint-plugin@${{ matrix.ts-eslint-plugin-version }} @typescript-eslint/parser@${{ matrix.ts-eslint-plugin-version }}
       - name: run tests
         # only collect coverage on eslint versions that support dynamic import
         run: yarn test --coverage ${{ matrix.eslint-version == 8 }}
