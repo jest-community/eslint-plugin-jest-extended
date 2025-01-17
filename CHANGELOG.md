@@ -1,3 +1,19 @@
+# [3.0.0](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v2.4.0...v3.0.0) (2025-01-17)
+
+
+### Features
+
+* adjust Node constraints to match `eslint-plugin-jest` ([#235](https://github.com/jest-community/eslint-plugin-jest-extended/issues/235)) ([6d2414a](https://github.com/jest-community/eslint-plugin-jest-extended/commit/6d2414a5bbb16988e7b3e0e88eca66ae0dab76c9))
+* drop support for Node v14 ([#232](https://github.com/jest-community/eslint-plugin-jest-extended/issues/232)) ([fef65e0](https://github.com/jest-community/eslint-plugin-jest-extended/commit/fef65e0fb61adca91598bbf4f3018273fb7b752e))
+* support `@typescript-eslint/utils` v7 & v8 ([#241](https://github.com/jest-community/eslint-plugin-jest-extended/issues/241)) ([40766b0](https://github.com/jest-community/eslint-plugin-jest-extended/commit/40766b019eb70271837e5eeb45d44dd21a999ca6))
+* upgrade `@typescript-eslint/utils` to v6 ([#238](https://github.com/jest-community/eslint-plugin-jest-extended/issues/238)) ([657bc42](https://github.com/jest-community/eslint-plugin-jest-extended/commit/657bc428599e4b5794603c9b308dedb5029bf2c2))
+
+
+### BREAKING CHANGES
+
+* Versions of Node v18 up to 18.11.x are no longer supported
+* drop support for Node v14
+
 # [3.0.0-next.4](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v3.0.0-next.3...v3.0.0-next.4) (2025-01-17)
 
 
