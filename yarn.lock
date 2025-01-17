@@ -2812,10 +2812,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^14.17.0":
-  version: 14.18.63
-  resolution: "@types/node@npm:14.18.63"
-  checksum: be909061a54931778c71c49dc562586c32f909c4b6197e3d71e6dac726d8bd9fccb9f599c0df99f52742b68153712b5097c0f00cac4e279fa894b0ea6719a8fd
+"@types/node@npm:^16.0.0":
+  version: 16.18.124
+  resolution: "@types/node@npm:16.18.124"
+  checksum: 7ef4838a6c3b7217406b85716bc1e27a6d3dfe2bbbbcc2d5317a0e55e04a7e1853deb19d32ecf642b7973000f3190f0b5e83d00fb44b87105ce4cd342a91cf62
   languageName: node
   linkType: hard
 
@@ -5127,7 +5127,7 @@ __metadata:
     "@tsconfig/node16": ^16.0.0
     "@types/dedent": ^0.7.0
     "@types/jest": ^29.0.0
-    "@types/node": ^14.17.0
+    "@types/node": ^16.0.0
     "@types/semver": ^7.5.8
     "@typescript-eslint/eslint-plugin": ^6.0.0
     "@typescript-eslint/parser": ^6.0.0
