@@ -288,12 +288,12 @@ __metadata:
   linkType: hard
 
 "@babel/helpers@npm:^7.27.6":
-  version: 7.27.6
-  resolution: "@babel/helpers@npm:7.27.6"
+  version: 7.28.2
+  resolution: "@babel/helpers@npm:7.28.2"
   dependencies:
     "@babel/template": ^7.27.2
-    "@babel/types": ^7.27.6
-  checksum: 12f96a5800ff677481dbc0a022c617303e945210cac4821ad5377a31201ffd8d9c4d00f039ed1487cf2a3d15868fb2d6cabecdb1aba334bd40a846f1938053a2
+    "@babel/types": ^7.28.2
+  checksum: 7ead856041f73496eeeb4f7f88a741067c8022fc764cbca7fc3e96ae73ce71969f75fd79b40b2c6a60ca4923f9d56f7798fb86ac2538f13b6d4acb54ebb563a7
   languageName: node
   linkType: hard
 
@@ -1336,13 +1336,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.0.0, @babel/types@npm:^7.20.7, @babel/types@npm:^7.27.1, @babel/types@npm:^7.27.3, @babel/types@npm:^7.27.6, @babel/types@npm:^7.28.0, @babel/types@npm:^7.3.3, @babel/types@npm:^7.4.4":
-  version: 7.28.1
-  resolution: "@babel/types@npm:7.28.1"
+"@babel/types@npm:^7.0.0, @babel/types@npm:^7.20.7, @babel/types@npm:^7.27.1, @babel/types@npm:^7.27.3, @babel/types@npm:^7.28.0, @babel/types@npm:^7.28.2, @babel/types@npm:^7.3.3, @babel/types@npm:^7.4.4":
+  version: 7.28.2
+  resolution: "@babel/types@npm:7.28.2"
   dependencies:
     "@babel/helper-string-parser": ^7.27.1
     "@babel/helper-validator-identifier": ^7.27.1
-  checksum: da49a23f86e36f4e4d996a648949a97b9387bae4d1fed747e9fd4bf0dd2a6d11302b6f70f2d00fe58dc12e090f47792596ee76e8def1c52f25d6806cd3a32d7f
+  checksum: 2218f0996d5fbadc4e3428c4c38f4ed403f0e2634e3089beba2c89783268c0c1d796a23e65f9f1ff8547b9061ae1a67691c76dc27d0b457e5fa9f2dd4e022e49
   languageName: node
   linkType: hard
 
@@ -2808,11 +2808,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*":
-  version: 24.0.15
-  resolution: "@types/node@npm:24.0.15"
+  version: 24.1.0
+  resolution: "@types/node@npm:24.1.0"
   dependencies:
     undici-types: ~7.8.0
-  checksum: 27f31e6976587efdfd13c0024703d7e11e6a27a6af48d488c6e5662733c9e8d47ac059e38cd9d491425f68f0c5e8e2bc060859b0b66afe79af0697acb0c25e4d
+  checksum: 01f9a97909eec619d937af3bc00ac49461e1846656b4d060f648145df06508eb6d77c200637a792481ee93a73976ced46cfbbdfe307e79be0f58ccdc415dfcd2
   languageName: node
   linkType: hard
 
@@ -3817,8 +3817,8 @@ __metadata:
   linkType: hard
 
 "cheerio@npm:^1.0.0-rc.10":
-  version: 1.1.1
-  resolution: "cheerio@npm:1.1.1"
+  version: 1.1.2
+  resolution: "cheerio@npm:1.1.2"
   dependencies:
     cheerio-select: ^2.1.0
     dom-serializer: ^2.0.0
@@ -3829,9 +3829,9 @@ __metadata:
     parse5: ^7.3.0
     parse5-htmlparser2-tree-adapter: ^7.1.0
     parse5-parser-stream: ^7.1.2
-    undici: ^7.11.0
+    undici: ^7.12.0
     whatwg-mimetype: ^4.0.0
-  checksum: d3ba6f38f591226bc05c254ded5b4f90ed647d839ece2b9e0069c2253a07b489d3d712ea3ac25a20dab579c740a5d3f32cd98e4cf6f3481a8f31abe96600b4d8
+  checksum: 84fec985143d81323d39f13bbe1b65ff4f934bfbfcfe586ab7674f4a54b13b3e9c6aa9b23e4a54e7147e08fafaed12f5f9bad554bb707579b3db464eeccc158f
   languageName: node
   linkType: hard
 
@@ -4716,9 +4716,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.173":
-  version: 1.5.187
-  resolution: "electron-to-chromium@npm:1.5.187"
-  checksum: 2987695995dc69a43fd19bd4de0637b984900c517c23c5f78f2ad70b4512a87544a33a936b84330a6ed61113aa7643e136cd8ee4486379a3c4c09cd9917ff5aa
+  version: 1.5.191
+  resolution: "electron-to-chromium@npm:1.5.191"
+  checksum: da0e3fdaca909e00d84f2e0af8bf0d9ccbfdf5e83e490b9bf4a86549a55219e7b788b23e57f084facbcca1af299fc757f76706c152ce9ae28d81c3eb43aa80f6
   languageName: node
   linkType: hard
 
@@ -5179,21 +5179,21 @@ __metadata:
   linkType: soft
 
 "eslint-plugin-n@npm:^17.0.0":
-  version: 17.21.0
-  resolution: "eslint-plugin-n@npm:17.21.0"
+  version: 17.21.2
+  resolution: "eslint-plugin-n@npm:17.21.2"
   dependencies:
     "@eslint-community/eslint-utils": ^4.5.0
     enhanced-resolve: ^5.17.1
     eslint-plugin-es-x: ^7.8.0
     get-tsconfig: ^4.8.1
     globals: ^15.11.0
+    globrex: ^0.1.2
     ignore: ^5.3.2
-    minimatch: ^9.0.5
     semver: ^7.6.3
     ts-declaration-location: ^1.0.6
   peerDependencies:
     eslint: ">=8.23.0"
-  checksum: 559d168ebc386bc2da6832caff32189feba8865fedebe8eebe4ccc47f77ca91dfa714ba60657f9f0cd3bab17bd4afc2bc9bb9d37df877168fb4df064434cd8b9
+  checksum: 1949cae3d09f641bf5dec8301aa3a68d548499c376be05d039700c5f17c1f0b79473ebcb6ec84a5a02a69e287832dadf1d432d5c940769545b3778ea3931f1a6
   languageName: node
   linkType: hard
 
@@ -6062,6 +6062,13 @@ __metadata:
     slash: ^5.1.0
     unicorn-magic: ^0.3.0
   checksum: b1f27dccc999c010ee7e0ce7c6581fd2326ac86cf0508474d526d699a029b66b35d6fa4361c8b4ad8e80809582af71d5e2080e671cf03c26e98ca67aba8834bd
+  languageName: node
+  linkType: hard
+
+"globrex@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "globrex@npm:0.1.2"
+  checksum: adca162494a176ce9ecf4dd232f7b802956bb1966b37f60c15e49d2e7d961b66c60826366dc2649093cad5a0d69970cfa8875bd1695b5a1a2f33dcd2aa88da3c
   languageName: node
   linkType: hard
 
@@ -7492,11 +7499,11 @@ __metadata:
   linkType: hard
 
 "jiti@npm:^2.4.1":
-  version: 2.4.2
-  resolution: "jiti@npm:2.4.2"
+  version: 2.5.1
+  resolution: "jiti@npm:2.5.1"
   bin:
     jiti: lib/jiti-cli.mjs
-  checksum: c6c30c7b6b293e9f26addfb332b63d964a9f143cdd2cf5e946dbe5143db89f7c1b50ad9223b77fb1f6ddb0b9c5ecef995fea024ecf7d2861d285d779cde66e1e
+  checksum: db901281e01013c27d46d6c5cde5fa817082f32232c92099043df11e135d00ccd1b4356a9ba356a3293e91855bd7437b6df5ae0ae6ad2c384d9bd59df926633c
   languageName: node
   linkType: hard
 
@@ -8630,13 +8637,13 @@ __metadata:
   linkType: hard
 
 "normalize-package-data@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "normalize-package-data@npm:7.0.0"
+  version: 7.0.1
+  resolution: "normalize-package-data@npm:7.0.1"
   dependencies:
     hosted-git-info: ^8.0.0
     semver: ^7.3.5
     validate-npm-package-license: ^3.0.4
-  checksum: e355670aa1bfa757cfa380c3ea66ad25e8c62001b44c9fa7a9ea3fa8a69f24259fa3e0614bc9330ba1d16052b4feaa2558f4778d65bc34a1b78f73397a418ec0
+  checksum: b1bfbb5fcf366c46b968adc7f51d700e1b5732baa4715cc7b699d8b4c5a15ea7364b71f4e915b4841b2a6f15f9026a7ed13f182c033c63c017b4bbff850f5c20
   languageName: node
   linkType: hard
 
@@ -11247,7 +11254,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^7.11.0":
+"undici@npm:^7.12.0":
   version: 7.12.0
   resolution: "undici@npm:7.12.0"
   checksum: dec61384d1d2c610f381debfe6b61bb4720720f36b8a5669ffd216d4e956fa283cb1fd9717ea44bc16b9e8a576ed237a67c40f00b0eba9df46cad01c5945abd8
@@ -11413,9 +11420,9 @@ __metadata:
   linkType: hard
 
 "validate-npm-package-name@npm:^6.0.0, validate-npm-package-name@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "validate-npm-package-name@npm:6.0.1"
-  checksum: 754448c4337977981a886a26986fcb2088e1253277037de3be0f483eefbab535c5ad9316ef47ed33ab4cb3a43d8daaf1b3748eeebca642e1eccd614287e26a1f
+  version: 6.0.2
+  resolution: "validate-npm-package-name@npm:6.0.2"
+  checksum: f0e022b0a7f11345a92b64121b059b720204cd64406a0d65d81526181dcb70aef551c7c6bf9ca37b91607a7c6ff4d62e1f63a86c8d9b7346d722a641a4bd8789
   languageName: node
   linkType: hard
 
