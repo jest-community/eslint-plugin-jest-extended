@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v3.0.0...v3.0.1) (2025-09-21)
+
+
+### Reverts
+
+* downgrade `ariperkkio/eslint-remote-tester-run-action` action ([#290](https://github.com/jest-community/eslint-plugin-jest-extended/issues/290)) ([5fbbe87](https://github.com/jest-community/eslint-plugin-jest-extended/commit/5fbbe87efedccdb94559724783405671cc94613a))
+
 # [3.0.0](https://github.com/jest-community/eslint-plugin-jest-extended/compare/v2.4.0...v3.0.0) (2025-01-17)
 
 
