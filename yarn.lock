@@ -5095,15 +5095,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-eslint-plugin@npm:^6.0.0":
-  version: 6.5.0
-  resolution: "eslint-plugin-eslint-plugin@npm:6.5.0"
+"eslint-plugin-eslint-plugin@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "eslint-plugin-eslint-plugin@npm:7.0.0"
   dependencies:
     "@eslint-community/eslint-utils": ^4.4.0
     estraverse: ^5.3.0
   peerDependencies:
-    eslint: ">=8.23.0"
-  checksum: 77684c3da1292acf4db04a19cdc0fc4f8ab2347ebc1a9d2df933f476478c3b5778595ce67f0b996d648df29bd9ae147df0cc12fa8bce38c5a1a6c46159bd021a
+    eslint: ">=9.0.0"
+  checksum: b67099bbb56a2abc28e09f296ae9b04e23401c72cf2f611c50010644f8a5ab732801c7367f1784c6522ca4e727e1144d4590878065c84b384bb634b70c4d0f5e
   languageName: node
   linkType: hard
 
@@ -5164,7 +5164,7 @@ __metadata:
     eslint: ^7.0.0 || ^8.0.0
     eslint-config-prettier: ^10.0.0
     eslint-doc-generator: ^1.0.0
-    eslint-plugin-eslint-plugin: ^6.0.0
+    eslint-plugin-eslint-plugin: ^7.0.0
     eslint-plugin-import: ^2.18.0
     eslint-plugin-n: ^17.0.0
     eslint-plugin-prettier: ^5.0.0
