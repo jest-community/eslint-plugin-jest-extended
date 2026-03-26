@@ -2661,10 +2661,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/node16@npm:^16.0.0":
-  version: 16.1.5
-  resolution: "@tsconfig/node16@npm:16.1.5"
-  checksum: 29b10a44ce15e0a9e0987b95e9fb73b671a77dfff91b8d2e041e106006cf14f2276ac73d40c19b0a90a85acf2381e868a905215e8216b1244f95ad7903b87f6e
+"@tsconfig/node18@npm:^18.2.0":
+  version: 18.2.6
+  resolution: "@tsconfig/node18@npm:18.2.6"
+  checksum: e3d907c20d04f0292288eb62af3481b11549eafdc686cd6357785083f9d00c99d49c5d9bdb10b1151d11cadbd8c39f2e0cb2644e2ba7612af7cbbcee38b01c3f
   languageName: node
   linkType: hard
 
@@ -5150,7 +5150,7 @@ __metadata:
     "@schemastore/package": ^0.0.10
     "@semantic-release/changelog": ^6.0.0
     "@semantic-release/git": ^10.0.0
-    "@tsconfig/node16": ^16.0.0
+    "@tsconfig/node18": ^18.2.0
     "@types/dedent": ^0.7.0
     "@types/jest": ^29.0.0
     "@types/node": ^16.0.0
