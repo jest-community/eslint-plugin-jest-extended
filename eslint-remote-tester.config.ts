@@ -1,5 +1,5 @@
-'use strict';
-
+import typescriptEslintParser from '@typescript-eslint/parser';
+import jestExtended from 'eslint-plugin-jest-extended';
 import type { Config } from 'eslint-remote-tester';
 import {
   getPathIgnorePattern,
@@ -13,22 +13,19 @@ const config: Config = {
   concurrentTasks: 3,
   cache: false,
   logLevel: 'info',
-  eslintrc: {
-    root: true,
-    env: {
-      es6: true,
-    },
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-      ecmaVersion: 2020,
-      sourceType: 'module',
-      ecmaFeatures: {
-        jsx: true,
+  eslintConfig: [
+    jestExtended.configs['flat/all'],
+    {
+      languageOptions: {
+        parser: typescriptEslintParser,
+        parserOptions: {
+          ecmaFeatures: {
+            jsx: true,
+          },
+        },
       },
     },
-    extends: ['plugin:jest-extended/all'],
-    rules: {},
-  },
+  ],
 };
 
 export default config;

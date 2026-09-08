@@ -1,6 +1,4 @@
-import { version as eslintVersion } from 'eslint/package.json';
 import type { Config } from 'jest';
-import * as semver from 'semver';
 
 const config = {
   clearMocks: true,
@@ -16,29 +14,11 @@ const config = {
     },
   },
 
-  projects: [
-    {
-      displayName: 'test',
-      testPathIgnorePatterns: [
-        '<rootDir>/lib/.*',
-        '<rootDir>/src/rules/__tests__/test-utils.ts',
-      ],
-      coveragePathIgnorePatterns: ['/node_modules/'],
-    },
-    {
-      displayName: 'lint',
-      runner: 'jest-runner-eslint',
-      testMatch: ['<rootDir>/**/*.{js,ts}'],
-      testPathIgnorePatterns: ['<rootDir>/lib/.*'],
-      coveragePathIgnorePatterns: ['/node_modules/'],
-    },
+  testPathIgnorePatterns: [
+    '<rootDir>/lib/.*',
+    '<rootDir>/src/rules/__tests__/test-utils.ts',
   ],
+  coveragePathIgnorePatterns: ['/node_modules/'],
 } satisfies Config;
-
-if (semver.major(eslintVersion) >= 9) {
-  config.projects = config.projects.filter(
-    ({ displayName }) => displayName !== 'lint',
-  );
-}
 
 export default config;
