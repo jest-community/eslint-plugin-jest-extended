@@ -78,9 +78,7 @@ const jestExtended = require('eslint-plugin-jest-extended');
 
 module.exports = [
   {
-    files: [
-      /* glob matching your test files */
-    ],
+    files: [/* glob matching your test files */],
     ...jestExtended.configs['flat/all'],
   },
 ];

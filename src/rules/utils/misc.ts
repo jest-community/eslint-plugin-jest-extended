@@ -42,30 +42,31 @@ export interface KnownCallExpression<Name extends string = string>
  *
  * This is `KnownCallExpression` from the perspective of the `MemberExpression` node.
  */
-interface CalledKnownMemberExpression<Name extends string = string>
-  extends KnownMemberExpression<Name> {
+interface CalledKnownMemberExpression<
+  Name extends string = string,
+> extends KnownMemberExpression<Name> {
   parent: KnownCallExpression<Name>;
 }
 
 export enum DescribeAlias {
-  'describe' = 'describe',
-  'fdescribe' = 'fdescribe',
-  'xdescribe' = 'xdescribe',
+  describe = 'describe',
+  fdescribe = 'fdescribe',
+  xdescribe = 'xdescribe',
 }
 
 export enum TestCaseName {
-  'fit' = 'fit',
-  'it' = 'it',
-  'test' = 'test',
-  'xit' = 'xit',
-  'xtest' = 'xtest',
+  fit = 'fit',
+  it = 'it',
+  test = 'test',
+  xit = 'xit',
+  xtest = 'xtest',
 }
 
 export enum HookName {
-  'beforeAll' = 'beforeAll',
-  'beforeEach' = 'beforeEach',
-  'afterAll' = 'afterAll',
-  'afterEach' = 'afterEach',
+  beforeAll = 'beforeAll',
+  beforeEach = 'beforeEach',
+  afterAll = 'afterAll',
+  afterEach = 'afterEach',
 }
 
 export enum ModifierName {
