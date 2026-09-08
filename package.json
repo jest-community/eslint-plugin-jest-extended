@@ -28,13 +28,13 @@
     "build": "babel --extensions .js,.ts src --out-dir lib --copy-files && rimraf --glob lib/__tests__ 'lib/**/__tests__'",
     "postinstall": "is-ci || husky",
     "lint": "eslint .",
-    "prepack": "rimraf --glob lib && yarn build",
+    "prepack": "rimraf --glob lib && npm run build",
     "prepublishOnly": "pinst --disable",
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier --write .",
     "postpublish": "pinst --enable",
     "test": "jest",
-    "tools:regenerate-docs": "yarn prepack && eslint-doc-generator",
+    "tools:regenerate-docs": "npm run prepack && eslint-doc-generator",
     "typecheck": "tsc -p ."
   },
   "commitlint": {
@@ -70,7 +70,7 @@
     ]
   },
   "dependencies": {
-    "@typescript-eslint/utils": "^6.0.0 || ^7.0.0 || ^8.0.0"
+    "@typescript-eslint/utils": "^8.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
