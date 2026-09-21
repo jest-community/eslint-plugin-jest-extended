@@ -13,7 +13,7 @@ matcher.
 This rule triggers a warning if an `expect` assertion is found asserting that a
 value is an array using one of the following methods:
 
-- Comparing the result of `Array.isArary(<value>)` to a boolean value,
+- Comparing the result of `Array.isArray(<value>)` to a boolean value,
 - Comparing the result of `<value> instanceof Array` to a boolean value,
 - Calling the `toBeInstanceOf` matcher with the `Array` class.
 
