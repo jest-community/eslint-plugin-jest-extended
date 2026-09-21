@@ -32,7 +32,7 @@ expect(myValue instanceof Array).toStrictEqual(false);
 
 expect(theResults() instanceof Array).not.toBeFalse();
 
-expect([]).toBeInstanceOf(true);
+expect([]).toBeInstanceOf(Array);
 
 expect(myValue).resolves.toBeInstanceOf(Array);
 

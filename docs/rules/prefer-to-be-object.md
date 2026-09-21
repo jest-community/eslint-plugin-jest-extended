@@ -25,7 +25,7 @@ expect(myValue instanceof Object).toStrictEqual(false);
 
 expect(theResults() instanceof Object).not.toBeFalse();
 
-expect([]).toBeInstanceOf(true);
+expect([]).toBeInstanceOf(Object);
 
 expect(myValue).resolves.toBeInstanceOf(Object);
 
