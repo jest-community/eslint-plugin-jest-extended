@@ -128,7 +128,10 @@ module.exports = {
       },
     },
     {
-      files: ['.eslintrc.js', 'babel.config.js'],
+      files: ['.eslintrc.js', 'babel.config.cts'],
+      parserOptions: {
+        sourceType: 'commonjs',
+      },
       rules: {
         '@typescript-eslint/no-require-imports': 'off',
         'import/no-commonjs': 'off',
