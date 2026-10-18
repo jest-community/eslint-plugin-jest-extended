@@ -18,5 +18,5 @@
     "skipLibCheck": true, // until we can upgrade @typescript-eslint
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "babel.config.cts"]
 }
